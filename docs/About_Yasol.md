@@ -4,7 +4,7 @@ Yasol is a search based solver for so called 'Quantified integer linear programs
 
 Our mission is research. The reason why we open the sources of this solver is in order to intensify the discussion whether multi-stage optimization is possible and maybe even practical. 
 
-While the solver is new in the sense that there are no other QIP solver at this time (October 2022), most basic ingredients of Yasol are not new at all. The heart of the search algorithm is an arithmetic linear constraint database together with the Alphabeta algorithm which has been successfully used in gaming programs like in chess programs since many years. In order to realize fast back jumps as typically performed in SAT- and QBF- solvers, we have extended the Alphabeta algorithm as roughly described in [1]. Yasol deals with constraint learning on the so called primal side as known from SAT- and QBF-solving, as well as with constraint learning on the so called dual side, as is known from Mathematical Programming. Yasol solves multistage quantified programs with the following properties:
+While the solver is new in the sense that there are no other QIP solver at this time (October 2022), most basic ingredients of Yasol are not new at all. The heart of the search algorithm is an arithmetic linear constraint database together with the Alphabeta algorithm which has been successfully used in gaming programs like in chess programs since many years. In order to realize fast back jumps as typically performed in SAT- and QBF- solvers, we have extended the Alphabeta algorithm as roughly described in <sup>1</sup>. Yasol deals with constraint learning on the so called primal side as known from SAT- and QBF-solving, as well as with constraint learning on the so called dual side, as is known from Mathematical Programming. Yasol solves multistage quantified programs with the following properties:
 
 * all constraints are linear
 * quantifiers are either existential or universal
@@ -14,17 +14,17 @@ While the solver is new in the sense that there are no other QIP solver at this 
 * continuous variables are allowed only on the last stage, assuming it is an existential stage
 * all variables must be bounded from below and above, and the range between upper and lower bounds of integer variables must not exceed 40 bits
 
-In a recent computational study we showed that solving robust discrete problems with multiple stages is well within the reach of our solver [2]. It makes intensive use of a linear program solver like clp or the lp-solver of cplex.
+In a recent computational study we showed that solving robust discrete problems with multiple stages is well within the reach of our solver <sup>2</sup>. It makes intensive use of a linear program solver like clp or the lp-solver of cplex.
 
 For some historical notes on Quantified Programming, Linear Programming and personal credits, we refer to our history page. 
 
 For details of how to use the solver and about details of input formats etc. we refer to our download page.
 
-[1] Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. Yasol: An Open Source Solver for Quantified Mixed Integer Programs. ACG 2017: 224-233
+<sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. Yasol: An Open Source Solver for Quantified Mixed Integer Programs. ACG 2017: 224-233
 
-[2] Marc Goerigk, Michael Hartisch. Multistage Robust Discrete Optimization via Quantified Integer Programming. Computers & Operations Research, 135:105434, 2021
+<sup>2</sup> Marc Goerigk, Michael Hartisch. Multistage Robust Discrete Optimization via Quantified Integer Programming. Computers & Operations Research, 135:105434, 2021
 
-[3] Michael Hartisch, Ulf Lorenz. A general model-and-run solver for multistage robust discrete linear optimization. Submitted to INFORMS Journal on Computing, 2023
+<sup>3</sup> Michael Hartisch, Ulf Lorenz. A general model-and-run solver for multistage robust discrete linear optimization. Submitted to INFORMS Journal on Computing, 2023
 
 ---
 
