@@ -36,10 +36,10 @@ In order to use Yasol on Windows you need to perform the following steps:
 7. In ordern to solve a .qlp instance execute YASOL_CLP (YASOL_CPLEX) with the qlp file you want to solve as input parameters, for example: 
     * Yasol_CLP ../../../Data/p2756.qlp
 
-**Executable**
+**Executable** <br>
 For Windows users we also provide an executable version which uses Coin Or.
 
-**Older Versions**
+**Older Versions** <br>
 Yasol_O-1.3.3(2017). Windows Sources: Download Windows Executable: Download
 
 ---
@@ -66,7 +66,7 @@ In order to use Yasol on Mac or Linux you need to perform the following steps:
 * Be sure that the file is in the .qlp format. For closer details on the file format examine the QLP File Format.
 * Always feel free to reach out to us. Setting up new software can be a tedious task and we are happy to help. You find our direct contact on our developers page
 
-**Older versions**
+**Older versions:**
 
 * Yasol_3.9.9.3.1(2020) Mac: Download, Linux: Download
 * Yasol_O-1.3.3(2017). Mac: Download, Linux: Download

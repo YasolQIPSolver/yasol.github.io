@@ -8,7 +8,7 @@ In 2007, Subramani coined the terms Quantified Linear Program and Quantified Int
 
 We extended this notion one step further and introduced a minimax objective<sup>2</sup>:
 
-picture definition 1.1
+![QLPpObjDef](images/QLPpObjDef.png)
 
 ... as well as a restricted mixed version with the following attributes:
 
@@ -47,8 +47,7 @@ You can download the QLP file for this instance. For a closer look at the file f
 
 A QIP is inherently asymmetric, as even though the min-max semantic of the objective is symmetric, the universally quantified variables are only restricted to their domain (solely given by bounds), whereas the existential player—in addition to having to obey the variable bounds—also must ensure the fulfillment of the constraint system. In other words: only the existential player has to cope with a polytope influenced by the opponent’s decisions whereby a polyhedral, or even decision-dependent, uncertainty set can only be modeled via tricky and not straight-forward modeling techniques. In order to be able to model the uncertainty set in a more simple way a second constraint system A<sup>∀</sup>x ≤ b<sup>∀</sup> was introduced, which allowed to explicitly model a polyhedral uncertainty set<sup>1</sup>. The usage of this universal constraint system was later extended to even allow decision-dependent uncertainty set<sup>2</sup>. For both modeling frameworks we also extended our solution framework<sup>3</sup>.
 
-**Example**
-
+**Example** <br>
 We consider a binary quantified program with an existential and a universal constraint system. As existentially quantified variables (x<sub>1</sub> and x<sub>2</sub>) have non-zero entries in the universal constraint system this instance is a QIP with decision-dependent uncertainty called QIP with interdependent domains. In particular, if both x<sub>1</sub> and x<sub>2</sub> are set to 1 the universal variable must not be 1. However, the existential player also has to ensure that setting x<sub>1</sub> and x<sub>2</sub> to 1 will no render the existential constraint system violated. As this is not the case, x<sub>1</sub>=1 and x<sub>2</sub>=1 is a legal variable assignment. In this case setting x<sub>3</sub>=1 would be an illegal assignment by the universal player, as it irrevocably violated the universal constraint system.
 
 Policy Space?
@@ -77,8 +76,7 @@ ORDER <br>
 x1 x2 x3 x4 <br>
 END <br>
 
-**Simply Restricted Instances**
-
+**Simply Restricted Instances** <br>
 In order to ensure that universal variable assignments are legal, i.e. that they do not eventually result in a violation of the universal constraint system, the feasibility of the universal constraint system must be checked in each step. This can be tedious as this means solving an IP at each universal decision node. However, we observed the following in many multistage robust problems:
 
 * Uncertainty maybe can be manipulated, but it cannot be 'defeated' in the sense that no legal move remains.
@@ -102,7 +100,7 @@ The benefit of having a simply restricted instance is that then the legality of 
 
 The following QIP problem definition and, as a consequence the content of this page, is a result of cooperative work between University Siegen (S. Gnad, M. Hartisch, U. Lorenz) and FAU Erlangen (L. Hupp, F. Liers, A. Peter). We used QIPs to model and solve a matching problem that can be interpreted as an airplane scheduling problem in which each airplane must be assigned to a time slot and at most b airplanes can be assigned to one time slot. This b-matching is enhanced by uncertain time intervals in which an airplane must land. For reasons of simplicity we will use the airplane scheduling interpretation to explain our intentions.
 
-Policy Space picture
+![Example_1](images/Example_1.png)
 Figure 1: Example with 4 airplanes and 6 possible time slots. 2 airplanes can be scheduled at each time slot (b=2). The initial planning costs are given and the possible time windows (consisting of two time slots) for each airplane are depicted as sliders below.
 
 Broadly speaking, we are interested in an initial plan that can be fixed cheaply if the mandatory time windows (the sliders in the figure) for some planes do not contain the initially scheduled time slot. Reasons for such variations (in the arrival time) might be adjusted airspeed (due to weather) or operational problems. 
@@ -118,8 +116,7 @@ There are some ideas for the composition of the fixing costs, for example:
 For simplicity and a more general presentation, the costs of replacing airplane i depend on a function f(x<sub>i\*</sub>,y<sub>i\*</sub>) representing the relation between initial plan, fixed plan and fixing costs. Depending on the selected cost type, this function can be modeled using linear constraints.
 
 **Basic quantified program for the airplane runway scheduling problem:**
-
-Policy Space picture
+![Modell](images/Modell.png)
 
 Brief explanation of the model:
 
@@ -137,24 +134,21 @@ Brief explanation of the model:
 9. Binds the assigned time slots of the fixed plan to the given time window
 10. Fixing costs depend on difference between initial plan (X) and fixed plan (Y); various cost models imaginable.
 
-**Example costs: fixed fee**
-
+**Example costs: fixed fee** <br>
 If, for example, the first mentioned fixing costs were used, i.e. fixed fee for replanning, further existential variables Z∈{0,1}<sup>|A|×|W|</sup> are installed in the third stage and the following constraints would be added:
 
-Policy Space picture
+![Fixed_fee](images/Fixed_fee.png)
 
 In this case variable z<sub>ij</sub> must identify if airplane i was not scheduled in time slot j in the initial plan but in the fixed plan resulting in costs f for this plane.
 
-**Restricting the universal variables**
-
+**Restricting the universal variables** <br>
 By choosing the domains of the universal variables S and L carefully the user already can limit the influence of the universal variables. Nevertheless, some scenarios should not be considered: For example one might want to allow the time windows for some airplane to consist of only one time slot. However, this should not be the case for all airplanes, since this would constitute a rather implausible event. One conceivable demand for the time windows could be that on average the time windows have a length of 2 (i.e. consist of two time slots). Thus, the universal variables L should not only be forced to lie within some bounds, but also within a specific polytope. The polytope for this example would require the following additional constraint:
 
-Policy Space Picture
+![Polytope](images/Polytope.png)
 
 However, simply adding this constraint to the constraint system would not have the desired effect. In fact, it would increase the influence of the universal variables since this constraint could easily be violated and thus the entire instance would become infeasible. However, adding this as a universal constraint would do the trick. or the enforcement of rules regarding the universal variables could be performed implicitly: In a final existential block the fulfillment of such a constraint is checked and if a violation is detected the remaining constraint system is relaxed and the objective value is reduced dramatically. This has the effect that a violation provoked by the allocation of universal variables results in a very good objective value (regarding the existential objective of minimization) and is thus unfavorable with respect to the universal maximization objective.
 
-**Instances**
-
+**Instances** <br>
 For this runway scheduling problem we created several instances with several variations:
 
 * Instances with more than 3 stages: After the initial plan the time windows for some airplanes are selected by the universal variables. For these airplanes a fixed plan must be prepared. After that the time windows for the remaining airplanes are specified by the universal variables and once again the plan must be fixed. 
@@ -167,6 +161,6 @@ Download Instances
 
 For each of these 29 instances our solver Yasol (utilizing the Cplex LP solver) had one hour to solve the instance. The results where compared to Cplex trying to solve the corresponding deterministic equivalent program, also within one hour. The results are displayed in the following table. Yasol solves 25 out of the 29 instances while CPLEX only can solve 6 of the converted DEPs. Even when only considering the instances solved by CPLEX, Yasol only needs 2.66 seconds on average compared to 6.83 seconds. If instances get large (easy indicator is the number right after the 'A' in the instance name) Yasol is able to detect infeasible instances rather fast but does not manage to grasp optimal feasible solutions. CPLEX, on the other hand, often exceeds the available memory on such instances and does not cope very well if many universal variables are present. But even on instances with few universal variables CPLEX quickly reaches its limit.
 
-Policy Space Picture
+![Upload_Table](images/Upload_Table.png)
 
 <sup>1</sup> Hartisch M., Ederer T., Lorenz U., Wolf J. (2016) Quantified Integer Programs with Polyhedral Uncertainty Set. In: Plaat A., Kosters W., van den Herik J. (eds) Computers and Games. CG 2016. Lecture Notes in Computer Science, vol 10068. Springer, Cham
