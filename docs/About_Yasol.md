@@ -16,15 +16,15 @@ While the solver is new in the sense that there are no other QIP solver at this 
 
 In a recent computational study we showed that solving robust discrete problems with multiple stages is well within the reach of our solver <sup>2</sup>. It makes intensive use of a linear program solver like clp or the lp-solver of cplex.
 
-For some historical notes on Quantified Programming, Linear Programming and personal credits, we refer to our history page. 
+For some historical notes on Quantified Programming, Linear Programming and personal credits, we refer to our [history page](Credits.md#history-q-mip-and-others). 
 
-For details of how to use the solver and about details of input formats etc. we refer to our download page.
+For details of how to use the solver and about details of input formats etc. we refer to our [download page](Download.md).
 
-<sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. Yasol: An Open Source Solver for Quantified Mixed Integer Programs. ACG 2017: 224-233
+<sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. <a href=https://link.springer.com/content/pdf/10.1007/978-3-319-71649-7_19.pdf target="_blank">Yasol: An Open Source Solver for Quantified Mixed Integer Programs.</a> ACG 2017: 224-233 
 
-<sup>2</sup> Marc Goerigk, Michael Hartisch. Multistage Robust Discrete Optimization via Quantified Integer Programming. Computers & Operations Research, 135:105434, 2021
+<sup>2</sup> Marc Goerigk, Michael Hartisch. <a href=https://www.sciencedirect.com/science/article/pii/S0305054821001908?via%3Dihub target="_blank">Multistage Robust Discrete Optimization via Quantified Integer Programming.</a> Computers & Operations Research, 135:105434, 2021 
 
-<sup>3</sup> Michael Hartisch, Ulf Lorenz. A general model-and-run solver for multistage robust discrete linear optimization. Submitted to INFORMS Journal on Computing, 2023
+<sup>3</sup> Michael Hartisch, Ulf Lorenz. <a href=https://arxiv.org/abs/2210.11132 target="_blank">A general model-and-run solver for multistage robust discrete linear optimization.</a> Submitted to INFORMS Journal on Computing, 2023 
 
 ---
 
@@ -41,7 +41,7 @@ Note that these requirements are fulfilled when starting Yasol from "Your_Yasol_
 
 ### Calling the Solver
 
-In order to solve an instance first be sure it adheres to the QLP file format. The solver is invoked using the following call:
+In order to solve an instance first be sure it adheres to the [QLP file format](Download.md#qmip-instances-in-the-qlp-file-format). The solver is invoked using the following call:
 
 `./Yasol_CPLEX <Instance> [<InformationLevel>] [<TimeLimit>]`
 
@@ -82,7 +82,7 @@ s.t.	-	x<sub>2</sub>	-	x<sub>3</sub>	≤	-1 <br>
  	    -	x<sub>1</sub>	+	x<sub>2</sub>	+	x<sub>3</sub>	≤	1 <br>
             x<sub>1</sub>	+	2	x<sub>2</sub>	≤	3 
 
-A typical QLP file (belonging to the above example) looks as follows (example):
+A typical QLP file (belonging to the above example) looks as follows <a href=http://tm-server-2.wiwi.uni-siegen.de/t3-q-mip/fileadmin/downloads/instances/qip_example.qlp target="_blank">(example)</a>:
 
 MINIMIZE <br>
 - x1 - 2 x2 - 2 x3 <br>

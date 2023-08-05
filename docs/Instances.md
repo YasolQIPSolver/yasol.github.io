@@ -85,5 +85,5 @@ Please note that not all instances have been converted 1:1 due to some border ca
 
 ---
 
-<sup>1</sup> Further details can be found in this [Ph.D. thesis] <br>
-<sup>2</sup> Further details can be found in this [Paper]
+<sup>1</sup> Further details can be found in this <a href=https://dspace.ub.uni-siegen.de/handle/ubsi/1705 target="_blank">Ph.D. thesis</a> <br>
+<sup>2</sup> Further details can be found in this <a href=https://www.sciencedirect.com/science/article/pii/S0305054821001908?via%3Dihub target="_blank">paper</a>
