@@ -20,16 +20,15 @@ For some historical notes on Quantified Programming, Linear Programming and pers
 
 For details of how to use the solver and about details of input formats etc. we refer to our [download page](Download.md).
 
-<sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. <a href=https://link.springer.com/content/pdf/10.1007/978-3-319-71649-7_19.pdf target="_blank">Yasol: An Open Source Solver for Quantified Mixed Integer Programs.</a> ACG 2017: 224-233 
-
-<sup>2</sup> Marc Goerigk, Michael Hartisch. <a href=https://www.sciencedirect.com/science/article/pii/S0305054821001908?via%3Dihub target="_blank">Multistage Robust Discrete Optimization via Quantified Integer Programming.</a> Computers & Operations Research, 135:105434, 2021 
-
+<sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. <a href=https://link.springer.com/content/pdf/10.1007/978-3-319-71649-7_19.pdf target="_blank">Yasol: An Open Source Solver for Quantified Mixed Integer Programs.</a> ACG 2017: 224-233 <br>
+<sup>2</sup> Marc Goerigk, Michael Hartisch. <a href=https://www.sciencedirect.com/science/article/pii/S0305054821001908?via%3Dihub target="_blank">Multistage Robust Discrete Optimization via Quantified Integer Programming.</a> Computers & Operations Research, 135:105434, 2021 <br>
 <sup>3</sup> Michael Hartisch, Ulf Lorenz. <a href=https://arxiv.org/abs/2210.11132 target="_blank">A general model-and-run solver for multistage robust discrete linear optimization.</a> Submitted to INFORMS Journal on Computing, 2023 
 
 ---
 
-### Setting Up
+### Getting started
 
+**Setting Up** <br>
 After you have downloaded and compiled the current Yasol version for your operating system you are ready to go. A few things have to be kept in mind when starting Yasol:
 
 * Ensure that the Yasol.ini file is present in the directory you want to call the solver from. This file is needed to load the solver setting. If it is not found the solver starts with very basic setting resulting in very long runtime.
@@ -37,10 +36,7 @@ After you have downloaded and compiled the current Yasol version for your operat
 
 Note that these requirements are fulfilled when starting Yasol from "Your_Yasol_Directory/bin", where the executable is located after compiling.
 
----
-
-### Calling the Solver
-
+**Calling the Solver** <br>
 In order to solve an instance first be sure it adheres to the [QLP file format](Download.md#qmip-instances-in-the-qlp-file-format). The solver is invoked using the following call:
 
 `./Yasol_CPLEX <Instance> [<InformationLevel>] [<TimeLimit>]`
@@ -52,10 +48,7 @@ The parameters in brackets are optional. With an increasing information level mo
 * Information level "Reduce": For instances with universal constraint system this call will return a standard QIP without universal constraints.
 Note that these option are not excessively tested yet.
 
----
-
-### Interpreting a Solution
-
+**Interpreting a Solution** <br>
 The main output the solver provides is the optimal objective value and the first stage solution. The principal variation, i.e. the variable assignment representing optimal play and thus the optimal objective value, can be retrieved from the logs/solutions.log file. Note that in this case "maintainPv" has to be set to one in the Yasol.ini file. Further, one can explicitly request a solution file solely for this instance. This can be done be setting "writeOutputFile=1" in the Yasol.ini file. Then, an XML formatted solution file will be created after the optimal solution was found. The name of the solution file will be the original instance file name with an attached .sol.
 
 ---
@@ -71,8 +64,6 @@ MAXIMIZE / MINIMIZE, SUBJECT TO, BOUNDS, GENERALS, BINARIES, UNCERTAINTY SUBJECT
 4. Every variable is marked with one of the new keywords ALL or EXISTS. Analogously the variables in the ALL and EXISTS section are separated by at least one space.
 5. The order of the variables is specified below the keyword ORDER.
 6. If the instance contains a universal constraint system specifying the uncertainty set, the keyword UNCERTAINTY SUBJECT TO is used similar to SUBJECT TO for the existential constraint system.
-
----
 
 Exemplarily we will consider the following QIP instance: 
 
@@ -106,19 +97,14 @@ ORDER <br>
 x1 x2 x3 <br>
 END
 
----
-
-**Requirements and Restrictions**
-
+**Requirements and Restrictions**<br>
 Only linear constraints and objective function.
 integer variables are allowed in all variable blocks
 Continuous variables, i.e. variables not listed below the keywords BINARIES or GENERAL, have to be part of the final (existential) variable block.
 The right-hand side of each constraint may only contain a single parameter, i.e. all variables have to be on the left-hand side.
 
----
 
-**Further Rules**
-
+**Further Rules**<br>
 * Make sure that all variables are on the left-hand side of the constraint. Variables on the right-hand side are not permitted.
 * Similarly, parameters are ignored if they appear on the left-hand side of the constraint.
 * The letter E or e, alone or followed by other valid symbols, in particular digits, should be avoided as this notation is reserved for exponential entries.

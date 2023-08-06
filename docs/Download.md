@@ -1,5 +1,7 @@
 # Download
 
+![HomePic](images/HomePic.png)
+
 ### Solver for Quantified Mixed Integer Programs
 
 Since Yasol has no own built-in LP solver you either need to install IBM® ILOG® CPLEX® Optimization Studio or the COIN-OR Optimization Suite in order to use our solver. Our solver makes intensive use of their linear program solver. These tools are black-box used, but it is our intention not to use the integer solving abilities of these foreign solvers.

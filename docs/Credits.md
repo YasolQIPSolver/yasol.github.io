@@ -13,8 +13,8 @@ While the solver is new in the sense that there are no other Q-MIP solver at thi
 <sup>4</sup> G. Gamrath, T. Koch, A. Martin, M. Miltenberger, D. Weninger: Progress in Presolving for Mixed Integer Programming. ZIB-Report 13-48, Berlin, 2013 <br>
 <sup>5</sup> N. Sörensson, N. Een: MiniSat v1.13 – A SAT Solver with Conflict-Clause Minimization. minisat.se/downloads/MiniSat_v1.13_short.pdf <br>
 <sup>6</sup> F. Lonsing, A. Biere. DepQBF: A Dependency-Aware QBF Solver. JSAT 7(2-3), 71–76 (2010) <br>
-<sup>7</sup> T. Ederer, M. Hartisch, U. Lorenz, T. Opfer, J. Wolf. Yasol: An Open Source Solver for Quantified Mixed Integer Programs. ACG 2017: 224-233 <br>
-<sup>8</sup> J. Wolf: Quantified Linear Programming. Doctoral Thesis. <br>
+<sup>7</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. <a href=https://link.springer.com/content/pdf/10.1007/978-3-319-71649-7_19.pdf target="_blank">Yasol: An Open Source Solver for Quantified Mixed Integer Programs.</a> ACG 2017: 224-233 <br>
+<sup>8</sup> J. Wolf: <a href=https://www.shaker.de/de/content/catalogue/index.asp?lang=de&amp;ID=8&amp;ISBN=978-3-8440-3720-3&amp;search=yes target="_blank">Quantified Linear Programming.</a> Doctoral Thesis. <br>
 <sup>9</sup> L. Zhang: Searching for truth: Techniques for Satisfiability of Boolean Formulas. Doctoral Thesis
 
 Special thanks go to Alexander Martin for many fruitful discussions and bringing the field of integer programming to my interest.
@@ -158,8 +158,8 @@ CSPs provide a general framework to express a wide variety of combinatorial sear
 
 ### Developers
 
-Ulf Lorenz, project head and main contributor <br>
-Michael Hartisch, contributor math programming, main contact for user service <br>
+<a href="http://www.wiwi.uni-siegen.de/technologiemanagement/" target="_blank">Ulf Lorenz</a>, project head and main contributor <br>
+<a href="https://www.wiwi.uni-siegen.de/ndsm/team/hartisch.html" target="_blank">Michael Hartisch</a>, contributor math programming, main contact for user service <br>
 Jan Wolf, main contributor for solver library
 
 ---
@@ -168,8 +168,8 @@ Jan Wolf, main contributor for solver library
 
 There is a growing number of third-party tools and apps developed for Yasol and QIP. We would like to thank all contributors! Their effort helped making our optimization framework more accessible.
 
-* Converter for different file formats of quantified programs, by Niklas Lorenz. GitHub
-* Julia/JuMP interface for the Yasol solver, by Hendrik Becker and Michael Hartisch. GitHub
+* Converter for different file formats of quantified programs, by Niklas Lorenz. <a href="https://github.com/niklaslorenz/qpra.git/" target="_blank">GitHub</a>
+* Julia/JuMP interface for the Yasol solver, by Hendrik Becker and Michael Hartisch. <a href="https://github.com/MichaelHartisch/YasolSolver.jl" target="_blank">GitHub</a>
 
 ---
 
@@ -177,6 +177,5 @@ There is a growing number of third-party tools and apps developed for Yasol and 
 
 Funded since 2018
 
-Project Description:
-
+**Project Description:**<br>
 Traditionally, it is assumed that the inputs of optimization problems are predefined and well known at planning time. However, considering uncertainty in the planning process is an essential asset. There are various approaches in the literature, how to deal with these uncertainties, one possibility is the use of quantified mixed-integer linear programs.Quantified mixed-integer linear programs are mixed integer linear programs with variables being either existentially or universally quantified. They can be interpreted as two-person zero- sum games between an existential and a universal player on the one side, or multistage optimization problems under uncertainty on the other side. Solutions of quantified programs are so called winning strategies for the existential player that specify how to react on moves of the universal player – certain fixations of universally quantified variables – to certainly win the game.Long-term goal of our efforts is the development of a tool for solving quantified mixed-integer linear programs and its presentation to the the public, just in the spirit of Cplex, Gurobi or Scip. In the pursuit of this objective, we develop, refine and substantiate solution procedures for the mighty modeling tool of quantified mixed-integer linear programs, in order to apply it for practice relevant tasks. One step in this direction was to publish the solver Yasol, as far as it exists already. We hope and expect that the results of this project will have far-reaching impact for research, as well as for practical optimization applications. As a further significant modeling extension, we will allow the active interference of the uncertainty set.
