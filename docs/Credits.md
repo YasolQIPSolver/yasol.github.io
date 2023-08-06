@@ -1,5 +1,7 @@
 # Credits
 
+![HomePic](images/HomePic.png)
+
 ### Yasol software
 
 (Ulf Lorenz, Jan. 2017)
