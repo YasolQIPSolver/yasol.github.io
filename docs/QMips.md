@@ -96,7 +96,7 @@ ORDER <br>
 x1 x2 x3 x4 <br>
 END <br>
 
-**Simply Restricted Instances** <br>
+**Simply Restricted Instances:** <br>
 In order to ensure that universal variable assignments are legal, i.e. that they do not eventually result in a violation of the universal constraint system, the feasibility of the universal constraint system must be checked in each step. This can be tedious as this means solving an IP at each universal decision node. However, we observed the following in many multistage robust problems:
 
 * Uncertainty maybe can be manipulated, but it cannot be 'defeated' in the sense that no legal move remains.
@@ -169,7 +169,7 @@ Z \in \left\{0,1\right\}^{\left|A\right| \times \left|W\right|} \\[8pt]
 
 In this case variable z<sub>ij</sub> must identify if airplane i was not scheduled in time slot j in the initial plan but in the fixed plan resulting in costs f for this plane.
 
-**Restricting the universal variables** <br>
+**Restricting the universal variables:** <br>
 By choosing the domains of the universal variables S and L carefully the user already can limit the influence of the universal variables. Nevertheless, some scenarios should not be considered: For example one might want to allow the time windows for some airplane to consist of only one time slot. However, this should not be the case for all airplanes, since this would constitute a rather implausible event. One conceivable demand for the time windows could be that on average the time windows have a length of 2 (i.e. consist of two time slots). Thus, the universal variables L should not only be forced to lie within some bounds, but also within a specific polytope. The polytope for this example would require the following additional constraint:
 
 <!-- ![Polytope](images/Polytope.png) -->
@@ -180,7 +180,7 @@ $$
 
 However, simply adding this constraint to the constraint system would not have the desired effect. In fact, it would increase the influence of the universal variables since this constraint could easily be violated and thus the entire instance would become infeasible. However, adding this as a universal constraint would do the trick. or the enforcement of rules regarding the universal variables could be performed implicitly: In a final existential block the fulfillment of such a constraint is checked and if a violation is detected the remaining constraint system is relaxed and the objective value is reduced dramatically. This has the effect that a violation provoked by the allocation of universal variables results in a very good objective value (regarding the existential objective of minimization) and is thus unfavorable with respect to the universal maximization objective.
 
-**Instances** <br>
+**Instances:** <br>
 For this runway scheduling problem we created several instances with several variations:
 
 * Instances with more than 3 stages: After the initial plan the time windows for some airplanes are selected by the universal variables. For these airplanes a fixed plan must be prepared. After that the time windows for the remaining airplanes are specified by the universal variables and once again the plan must be fixed. 
