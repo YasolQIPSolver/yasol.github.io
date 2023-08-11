@@ -1,4 +1,4 @@
-# Home
+<!-- #Home -->
 
 <!-- ![HomePic](images/HomePic.png) -->
 
