@@ -1,6 +1,6 @@
 # Home
 
-![HomePic](images/HomePic.png)
+<!-- ![HomePic](images/HomePic.png) -->
 
 ### Welcome to Quantified Programming!
 

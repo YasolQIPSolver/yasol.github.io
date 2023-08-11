@@ -1,6 +1,6 @@
 # Q-MIPs
 
-![HomePic](images/HomePic.png)
+<!-- ![HomePic](images/HomePic.png) -->
 
 ### Quantified (Mixed) Integer Linear Programming
 

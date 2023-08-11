@@ -1,6 +1,6 @@
 # Credits
 
-![HomePic](images/HomePic.png)
+<!-- ![HomePic](images/HomePic.png) -->
 
 ### Yasol software
 

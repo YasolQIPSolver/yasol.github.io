@@ -1,6 +1,6 @@
 # Instances
 
-![HomePic](images/HomePic.png)
+<!-- ![HomePic](images/HomePic.png) -->
 
 ### Test instances
 

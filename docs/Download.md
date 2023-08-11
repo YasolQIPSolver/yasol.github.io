@@ -1,6 +1,6 @@
 # Download
 
-![HomePic](images/HomePic.png)
+<!-- ![HomePic](images/HomePic.png) -->
 
 ### Solver for Quantified Mixed Integer Programs
 
