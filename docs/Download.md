@@ -38,10 +38,10 @@ In order to use Yasol on Windows you need to perform the following steps:
 7. In ordern to solve a .qlp instance execute YASOL_CLP (YASOL_CPLEX) with the qlp file you want to solve as input parameters, for example: 
     * Yasol_CLP ../../../Data/p2756.qlp
 
-**Executable** <br>
+**Executable:** <br>
 For Windows users we also provide an executable version which uses Coin Or.
 
-**Older Versions** <br>
+**Older Versions:** <br>
 Yasol_O-1.3.3(2017). Windows Sources: Download Windows Executable: Download
 
 ---
