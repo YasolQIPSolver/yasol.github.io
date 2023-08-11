@@ -52,7 +52,7 @@ A QIP is inherently asymmetric, as even though the min-max semantic of the objec
 **Example** <br>
 We consider a binary quantified program with an existential and a universal constraint system. As existentially quantified variables (x<sub>1</sub> and x<sub>2</sub>) have non-zero entries in the universal constraint system this instance is a QIP with decision-dependent uncertainty called QIP with interdependent domains. In particular, if both x<sub>1</sub> and x<sub>2</sub> are set to 1 the universal variable must not be 1. However, the existential player also has to ensure that setting x<sub>1</sub> and x<sub>2</sub> to 1 will no render the existential constraint system violated. As this is not the case, x<sub>1</sub>=1 and x<sub>2</sub>=1 is a legal variable assignment. In this case setting x<sub>3</sub>=1 would be an illegal assignment by the universal player, as it irrevocably violated the universal constraint system.
 
-Policy Space?
+<img src="../images/BeispielQIPID.png" alt="Beispiel QIPID" style="max-width: 80%;">
 
 The optimal solution of this instance is -1 with principal variation (1,1,0,0). In order to solve this instance with our solver, a universal constraint must be explicitly named in the QLP file using the keyword UNCERTAINTY SUBJECT TO [Download instance].
 
@@ -86,7 +86,7 @@ In order to ensure that universal variable assignments are legal, i.e. that they
 
 We formalized this observation and we call instances those observations apply to simply restricted.
 
-Definition Simply Restricted?
+<img src="../images/SimplyRestricted.png" alt="Restricted" style="max-width: 80%;">
 
 The benefit of having a simply restricted instance is that then the legality of a universal variable assignment can be checked be simply traversing the universal constraints and checking whether they remain satisfiable, even in the worst case. Thus, the satisfiability of entire universal constraint system can be checked locally rather than solving the entire IP. If your instance is simply restricted you can specify "isSimplyRestricted=1" in the Yasol.ini file. If your instance does not fulfill the requirements, or if you are not sure, simply set "isSimplyRestricted" to zero, and each universal variable assignment will be verified by solving the corresponding universal IP. 
 
