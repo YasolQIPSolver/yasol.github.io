@@ -10,7 +10,17 @@ In 2007, Subramani coined the terms Quantified Linear Program and Quantified Int
 
 We extended this notion one step further and introduced a minimax objective<sup>2</sup>:
 
-<img src="../images/QLPpObjDef.png" alt="QLPpObjDef" style="max-width: 80%;">
+$\textbf{Definition}~\text{(Quantified Linear Program (QLP))}$.
+Let there be a vector $x = (x_1,...,x_n)^T \in \mathbb{Q}^n$ of variables, integral lower and upper bounds $l \in \mathbb{Z}^n$ with $l_i \leq x_i \leq u_i$, a coefficient matrix $A \in \mathbb{Q}^{m \times n}$, a righthand side vector $b \in \mathbb{Q}^m$ and a vector of quantifiers $Q = (Q_i, ..., Q_n)^T \in \left\{\forall, \exists \right\}^n$, let the term $Q \circ x \in \left[ l,u \right]$ with the component-wise binding operator $\circ$  denote the quantification vector $(Q_1x_1 \in \left[ l_1,u_1 \right], ..., Q_nx_n \in \left[ l_n, u_n \right])^T$ such that every quantifier $Q_i$ binds the variable $x_i$ ranging over the interval $\left[ l_i, u_i \right]$. Each maximal consecutive subsequence of $Q$ consisting of identival quantifiers is called a quantifier block - the corresponding subsequence of $x$ is called a variable block, with the $i$-th block being denoted by $x^{i}$. Let there also be a vector of objective coefficients $c \in \mathbb{Q}^n$. We call $(Q, l, u, A, b, c)$ with 
+
+\begin{align}
+z = \min_{x^1}(c^1x^1 + \max_{x^2}(c^2x^2 + &\min_{x^3}(c^3x^3 + \max_{x^4}(... \min_{x^m} c^mx^m)))) \\[5pt]
+Q \circ x \in &\left[ l, u \right]: Ax \leq b
+\end{align}
+
+a quantified linear program (QLP) with objective function.
+<!-- <img src="../images/QLPpObjDef.png" alt="QLPpObjDef" style="max-width: 80%;"> -->
+
 
 ... as well as a restricted mixed version with the following attributes:
 
@@ -70,7 +80,42 @@ A QIP is inherently asymmetric, as even though the min-max semantic of the objec
 **Example:** <br>
 We consider a binary quantified program with an existential and a universal constraint system. As existentially quantified variables ($x_1$ and $x_2$) have non-zero entries in the universal constraint system this instance is a QIP with decision-dependent uncertainty called QIP with interdependent domains. In particular, if both $x_1$ and $x_2$ are set to 1 the universal variable must not be 1. However, the existential player also has to ensure that setting $x_1$ and $x_2$ to 1 will no render the existential constraint system violated. As this is not the case, $x_1 = 1$ and $x_2 = 1$ is a legal variable assignment. In this case setting $x_3=1$ would be an illegal assignment by the universal player, as it irrevocably violated the universal constraint system.
 
-<img src="../images/BeispielQIPID.png" alt="Beispiel QIPID" style="max-width: 80%;">
+<!-- <img src="../images/BeispielQIPID.png" alt="Beispiel QIPID" style="max-width: 80%;"> -->
+
+\begin{align}
+c^Tx &: \min x_1-2x_2+2x_3+x_4 \\[5pt]
+Q \circ \mathcal{L} &: \exists x_1 \in \left\{0, 1 \right\} \exists x_2 \in \left\{0, 1 \right\} \forall x_3 \in \left\{0, 1 \right\} \exists x_4 \in \left\{0, 1 \right\} \\[5pt]
+A^\exists x \leq b^\exists &: 
+\begin{pmatrix}
+1 & -2 & 1 & -1 \\
+1 & 1 & 1 & -1
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+\end{pmatrix}
+\leq 
+\begin{pmatrix}
+1 \\
+2
+\end{pmatrix} \\[5pt]
+A^\forall x \leq b^\forall &:
+\begin{pmatrix}
+1 & 1 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+\end{pmatrix}
+\leq
+\begin{pmatrix}
+2 
+\end{pmatrix}
+\end{align}
 
 The optimal solution of this instance is -1 with principal variation (1,1,0,0). In order to solve this instance with our solver, a universal constraint must be explicitly named in the QLP file using the keyword UNCERTAINTY SUBJECT TO [Download instance].
 
@@ -104,7 +149,22 @@ In order to ensure that universal variable assignments are legal, i.e. that they
 
 We formalized this observation and we call instances those observations apply to simply restricted.
 
-<img src="../images/SimplyRestricted.png" alt="Restricted" style="max-width: 80%;">
+<!-- <img src="../images/SimplyRestricted.png" alt="Restricted" style="max-width: 80%;"> -->
+
+$\textbf{Definition}~(\text{Simply Restricted}~QIP^{ID})$.
+Let $P = (A^\exists, A^\forall, b^\exists, b^\forall, c, \mathcal{L}, Q)$ be a $QIP^{ID}$. If the two following conditions are fulfilled, we call $P$ a simply restricted $QIP^{ID}$.
+
+1. For each universal variable block $i \in \mathcal{A}$ we demand
+
+\begin{equation*}
+\forall~ (\hat{x}^{(1)}\in \mathcal{L}^{(1)}, \hat{x}^{(2)} \in \mathcal{F}^{(2)}, ..., \hat{x}^{(i-2)} \in \mathcal{F}^{(i-2)}, \hat{x}^{(i-1)} \in \mathcal{L}^{(i-1)}): \mathcal{F}^{(i)} \neq \emptyset.
+\end{equation*}
+
+2. Let $i \in \mathcal{A}$ and let $\hat{x}^{(1)} \in \mathcal{L}^{(1)}, ..., \hat{x}^{(i-1)} \in \mathcal{L}^{(i-1)}$ be a partial variable assignment up to block $i$. If $\tilde{x}^{(i)} \not\in \mathcal{F}^{(i)} (\hat{x}^{(1)}, ..., \hat{x}^{(i-1)})$, then
+
+\begin{equation*}
+\exists ~ k \in \left\{ 1, ..., m_\forall \right\}: \sum_{j < i} A_{k,(j)}^\forall \hat{x}^{(j)} + A_{k,(i)}^\forall \tilde{x}^{(i)} + \sum_{j>i} \min_{x^{(j)} \in \mathcal{L}^{(j)}} A_{k,(j)}^\forall x^{(j)} \not \leq b_k^\forall.
+\end{equation*}
 
 The benefit of having a simply restricted instance is that then the legality of a universal variable assignment can be checked be simply traversing the universal constraints and checking whether they remain satisfiable, even in the worst case. Thus, the satisfiability of entire universal constraint system can be checked locally rather than solving the entire IP. If your instance is simply restricted you can specify "isSimplyRestricted=1" in the Yasol.ini file. If your instance does not fulfill the requirements, or if you are not sure, simply set "isSimplyRestricted" to zero, and each universal variable assignment will be verified by solving the corresponding universal IP. 
 
@@ -118,10 +178,12 @@ The benefit of having a simply restricted instance is that then the legality of 
 
 The following QIP problem definition and, as a consequence the content of this page, is a result of cooperative work between University Siegen (S. Gnad, M. Hartisch, U. Lorenz) and FAU Erlangen (L. Hupp, F. Liers, A. Peter). We used QIPs to model and solve a matching problem that can be interpreted as an airplane scheduling problem in which each airplane must be assigned to a time slot and at most b airplanes can be assigned to one time slot. This b-matching is enhanced by uncertain time intervals in which an airplane must land. For reasons of simplicity we will use the airplane scheduling interpretation to explain our intentions.
 
-<figure>
-<img src="../images/Example_1.png" alt="Example_1" style="max-width: 80%;">
-<figcaption>Figure 1: Example with 4 airplanes and 6 possible time slots. 2 airplanes can be scheduled at each time slot (b=2). The initial planning costs are given and the possible time windows (consisting of two time slots) for each airplane are depicted as sliders below.</figcaption>
-</figure>
+<div style="text-align: center;">
+    <figure style="display: inline-block;">
+        <img src="../images/Example_1.png" alt="Example_1" style="max-width: 80%;">
+        <figcaption>Figure 1: Example with 4 airplanes and 6 possible time slots. 2 airplanes can be scheduled at each time slot (b=2). The initial planning costs are given and the possible time windows (consisting of two time slots) for each airplane are depicted as sliders below.</figcaption>
+    </figure>
+</div>
 
 Broadly speaking, we are interested in an initial plan that can be fixed cheaply if the mandatory time windows (the sliders in the figure) for some planes do not contain the initially scheduled time slot. Reasons for such variations (in the arrival time) might be adjusted airspeed (due to weather) or operational problems. 
 
@@ -133,27 +195,40 @@ There are some ideas for the composition of the fixing costs, for example:
 * rescheduling one airplane results in costs depending on the newly selected time slot
 * rescheduling one airplane results in costs depending on the initial and the newly selected time slot
 
-For simplicity and a more general presentation, the costs of replacing airplane i depend on a function f(x<sub>i\*</sub>,y<sub>i\*</sub>) representing the relation between initial plan, fixed plan and fixing costs. Depending on the selected cost type, this function can be modeled using linear constraints.
+For simplicity and a more general presentation, the costs of replacing airplane i depend on a function $f(x_{i^*},y_{i^*})$ representing the relation between initial plan, fixed plan and fixing costs. Depending on the selected cost type, this function can be modeled using linear constraints.
 
 **Basic quantified program for the airplane runway scheduling problem:**
 
-<img src="../images/Modell.png" alt="Modell" style="max-width: 80%;">
+<!-- <img src="../images/Modell.png" alt="Modell" style="max-width: 80%;"> -->
+
+\begin{align}
+\min \quad & \sum_{i \in A}\sum_{j \in W} c_{i,j}x_{i,j} + \max \left\{ \min \left\{ \sum_{i \in A} c_i^{fix} \right\} \right\} \\
+\mathrm{s.t.} \quad & \exists X \in \left\{0, 1 \right\}^{\left| A \right| \times \left| W \right|} \\
+& \forall S \in \mathcal{S}, L \in \mathcal{L} \\
+& \exists Y \in \left\{0, 1 \right\}^{\left| A \right| \times \left| W \right|}: \\
+& \sum_{j \in W} x_{i,j} = 1 \quad && \forall i \in A \\
+& \sum_{i \in A} x_{i,j} \leq b \quad && \forall j \in W \\
+& \sum_{j \in W} y_{i,j} = 1 \quad && \forall i \in A \\
+& \sum_{i \in A} y_{i,j} \leq b \quad && \forall j \in W \\
+& s_i \leq \sum_{j \in W} j \cdot y_{i,j} \leq s_i+l_i \quad && \forall i \in A \\
+& c_i^{fix} = f(x_{i,*}, y_{i,*}) \quad && \forall i \in A \\
+\end{align}
 
 Brief explanation of the model:
 
 1. three stage objective function
     * first stage: select initial plan resulting in initial costs
-    * second stage: uncertain events → new conditions regarding allowed time slots (the start (s<sub>i</sub>∈S) and the length (l<sub>i</sub>∈L) of the time window is selected for each airplane i)
+    * second stage: uncertain events → new conditions regarding allowed time slots (the start $(s_i \in S)$ and the length $(l_i \in L)$ of the time window is selected for each airplane $i$)
     * third stage: if necessary fix the initial plan causing additional costs
 2. First stage existential variables: Initial scheduling variables
-3. Second stage universal variables: Specification of the starting point (s) and the length (l) of the mandatory time window for each airplane
+3. Second stage universal variables: Specification of the starting point ($s$) and the length ($l$) of the mandatory time window for each airplane
 4. Third stage existential variables: Final scheduling variables respecting the time windows defined in stage two 
 5. Ensures that each airplane is assigned to exactly one time slot in the initial plan
 6. Ensures that each time slot can only hold b airplanes in the initial plan 
 7. Ensures that each airplane is assigned to exactly one time slot in the fixed plan
 8. Ensures that each time slot can only hold b airplanes in the fixed plan 
 9. Binds the assigned time slots of the fixed plan to the given time window
-10. Fixing costs depend on difference between initial plan (X) and fixed plan (Y); various cost models imaginable.
+10. Fixing costs depend on difference between initial plan ($X$) and fixed plan ($Y$); various cost models imaginable.
 
 **Example costs: fixed fee** <br>
 If, for example, the first mentioned fixing costs were used, i.e. fixed fee for replanning, further existential variables $Z \in \left\{0,1\right\}^{\left|A\right| \times \left|W\right|}$ are installed in the third stage and the following constraints would be added:
@@ -167,10 +242,10 @@ Z \in \left\{0,1\right\}^{\left|A\right| \times \left|W\right|} \\[8pt]
 \end{align}
 
 
-In this case variable z<sub>ij</sub> must identify if airplane i was not scheduled in time slot j in the initial plan but in the fixed plan resulting in costs f for this plane.
+In this case variable $z_{i,j}$ must identify if airplane $i$ was not scheduled in time slot $j$ in the initial plan but in the fixed plan resulting in costs $f$ for this plane.
 
 **Restricting the universal variables:** <br>
-By choosing the domains of the universal variables S and L carefully the user already can limit the influence of the universal variables. Nevertheless, some scenarios should not be considered: For example one might want to allow the time windows for some airplane to consist of only one time slot. However, this should not be the case for all airplanes, since this would constitute a rather implausible event. One conceivable demand for the time windows could be that on average the time windows have a length of 2 (i.e. consist of two time slots). Thus, the universal variables L should not only be forced to lie within some bounds, but also within a specific polytope. The polytope for this example would require the following additional constraint:
+By choosing the domains of the universal variables $S$ and $L$ carefully the user already can limit the influence of the universal variables. Nevertheless, some scenarios should not be considered: For example one might want to allow the time windows for some airplane to consist of only one time slot. However, this should not be the case for all airplanes, since this would constitute a rather implausible event. One conceivable demand for the time windows could be that on average the time windows have a length of 2 (i.e. consist of two time slots). Thus, the universal variables L should not only be forced to lie within some bounds, but also within a specific polytope. The polytope for this example would require the following additional constraint:
 
 <!-- ![Polytope](images/Polytope.png) -->
 
@@ -196,5 +271,6 @@ For each of these 29 instances our solver Yasol (utilizing the Cplex LP solver) 
 ![Upload_Table](images/Upload_Table.png)
 
 <sup>1</sup> Hartisch M., Ederer T., Lorenz U., Wolf J. (2016) <a href="https://link.springer.com/chapter/10.1007/978-3-319-50935-8_15" target="_blank">Quantified Integer Programs with Polyhedral Uncertainty Set.</a> In: Plaat A., Kosters W., van den Herik J. (eds) Computers and Games. CG 2016. Lecture Notes in Computer Science, vol 10068. Springer, Cham
+
 
 
