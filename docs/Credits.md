@@ -177,8 +177,9 @@ There is a growing number of third-party tools and apps developed for Yasol and 
     <i class="fa fa-github"></i> GitHub</a>
 
 ---
+### DFG Funding
 
-### Advanced Algorithms and Heuristics for Solving Quantified Mixed - Integer Linear Programs
+**Advanced Algorithms and Heuristics for Solving Quantified Mixed - Integer Linear Programs**
 
 Funded since 2018
 
