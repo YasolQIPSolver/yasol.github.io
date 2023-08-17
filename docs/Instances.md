@@ -21,11 +21,11 @@ Quantified Integeger Programs (QIP) are Q-MIPs with only integer variables. A sp
 The task is to select p out of n=2p items, such that the costs are minimized<sup>1, 2</sup>. This happens in a multistage manner: In a first (existential) decision stage items can be selected for fixed costs. Then, in a universal decision stage, one of N cost scenario is selected and in the subsequent existential decision stage further items can be selected. Those two stages (disclosure of a scenario and selection of items) are repeated S times. We provide two different quantified models: a standard QIP and a QIP with universal constraints, i.e. a QIP with polyhedral uncertainty set. Selection instances have the naming scheme selection-n-p-N-S-R-t.qlp. R is the seed for the random number generator. t∈{s,u} represents the model type: s for "standard QIP" and u for "QIP with universal constraints". We provide the following testsets:
 
 * N=4, n∈{10,20,30,40,50} and S∈{1,..,8}. 50 instances per constellation:
-    * <a href="/../downloads/instances/mrsp/Selection_QIP_4Scenarios.zip" download>Download: 2000 QIP instances</a>
-    * <a href="/../downloads/instances/mrsp/Selection_QIPPU_4Scenarios.zip" download>Download: 2000 QIP instances with universal constrains</a>
+    * <a href="../downloads/instances/mrsp/Selection_QIP_4Scenarios.zip" download>Download: 2000 QIP instances</a>
+    * <a href="downloads/instances/mrsp/Selection_QIPPU_4Scenarios.zip" download>Download: 2000 QIP instances with universal constrains</a>
 * n=10, N=2^k, k∈{1,..,8} and S=s∈{1,..,8} with k+s≤11. 50 instances per constellation:
-    * <a href="/../downloads/instances/mrsp/Selection_QIP_10items.zip" download>Download: 2450 QIP instances</a>
-    * <a href="/../downloads/instances/mrsp/Selection_QIPPU_10items.zip" download>Download: 2450 QIP instances with universal constrains</a>
+    * <a href="../../downloads/instances/mrsp/Selection_QIP_10items.zip" download>Download: 2450 QIP instances</a>
+    * <a href="https://github.com/YasolQIPSolver/yasol.github.io/blob/main/docs/downloads/instances/mrsp/Selection_QIPPU_10items.zip" download>Download: 2450 QIP instances with universal constrains</a>
 
 ---
 
