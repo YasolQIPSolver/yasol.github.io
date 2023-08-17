@@ -117,7 +117,7 @@ x_4 \\
 \end{pmatrix}
 \end{align}
 
-The optimal solution of this instance is -1 with principal variation (1,1,0,0). In order to solve this instance with our solver, a universal constraint must be explicitly named in the QLP file using the keyword UNCERTAINTY SUBJECT TO [Download instance].
+The optimal solution of this instance is -1 with principal variation (1,1,0,0). In order to solve this instance with our solver, a universal constraint must be explicitly named in the QLP file using the keyword UNCERTAINTY SUBJECT TO [<a href="http://tm-server-2.wiwi.uni-siegen.de/t3-q-mip/fileadmin/downloads/instances/Example_QIPID_Instance_01.qlp" target="_blank">Download instance</a>].
 
 MINIMIZE <br>
 x1 -2x2 +2x3 +x4 <br>
@@ -264,7 +264,7 @@ For this runway scheduling problem we created several instances with several var
 * Instances with diverse time windows: The interval length can vary from 0 up to 4 time slots and the interval itself can start at up to 4 time slots.
 * Instances with different numbers of airplanes and time slots: the number of airplanes varies between 5 and up to more than 100. The number of time slots varies between 7 and up to 200 time slots.
 
-Download Instances
+<a href="../downloads/instances/runway_schedul/Instances_runway_scheduling.zip" download>Download Instances</a>
 
 For each of these 29 instances our solver Yasol (utilizing the Cplex LP solver) had one hour to solve the instance. The results where compared to Cplex trying to solve the corresponding deterministic equivalent program, also within one hour. The results are displayed in the following table. Yasol solves 25 out of the 29 instances while CPLEX only can solve 6 of the converted DEPs. Even when only considering the instances solved by CPLEX, Yasol only needs 2.66 seconds on average compared to 6.83 seconds. If instances get large (easy indicator is the number right after the 'A' in the instance name) Yasol is able to detect infeasible instances rather fast but does not manage to grasp optimal feasible solutions. CPLEX, on the other hand, often exceeds the available memory on such instances and does not cope very well if many universal variables are present. But even on instances with few universal variables CPLEX quickly reaches its limit.
 

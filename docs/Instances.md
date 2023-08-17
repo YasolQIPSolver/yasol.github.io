@@ -44,7 +44,7 @@ For a weighted bipartite graph G=(V,E,c) with V=A∪B, n=|A|=|B| one wants to de
 We consider a single item lot-sizing problem with discrete ordering decisions and T periods<sup>2</sup>. At the beginning of each time period, the product demand that needs to be satisfied is disclosed: Either dt or dt. In order to serve the demand, in each period t∈{0,...,T-1} one of B basic orders can be places resulting in the deliverance of corresponding quantity at the beginning of the subsequent period. Additionally, on of U urgent orders can be placed in each period t∈{1,...,T} (with higher costs than the basic order), that is delivered in the same period. If the available quantity exceeds the demand, excess units are stored. Lot-Sizing instances have the naming scheme LotSizing-T-B-U-T.qlp. R is the seed for the random number generator. We provide the following testset:
 
 * T∈{5,6,7,8,9,10}, B∈{3,4} and U∈{2,3}. 50 instances per constellation:
-    * <a href="/../downloads/instances/mrlsp/LotSizingInstances.zip" download>Download: 1200 QIP instances</a>
+    * <a href="../downloads/instances/mrlsp/LotSizingInstances.zip" download>Download: 1200 QIP instances</a>
 
 ---
 
@@ -53,7 +53,7 @@ We consider a single item lot-sizing problem with discrete ordering decisions an
 The task is to find a valid knapsack solution for each of T stages with n available items, where uncertainty in the item weights has been added [2]. The number of items with increased weight is budgeted: in each time step the weight of at most α items can be increased and overall at most β such increases are allowed. The objective ist to maximize the profit resulting from the selected knapsack items but additionally a transition bonus is used to aim for a stable sequence of solutions. Knapsack instances have the naming scheme Knapsack_T-n-R.qlp. R is the seed for the random number generator. We provide the following testset:
 
 * n∈{2,...,7} and T∈{2,...,7}. 50 instances per constellation:
-    * <a href="/../downloads/instances/mrkp/KnapsackInstances.zip" download>Download: 1800 QIP instances</a>
+    * <a href="../downloads/instances/mrkp/KnapsackInstances.zip" download>Download: 1800 QIP instances</a>
 
 ---
 
@@ -62,11 +62,11 @@ The task is to find a valid knapsack solution for each of T stages with n availa
 For a set of airplanes A, a set of timeslots S, and b runways we are interested in a b-matching such that each airplane is assigned to exactly one time slot and each time slot contains at most b airplanes<sup>1</sup>. After an initial plan is determined, the time windows (a set of time slots) for a (sub)set of airplanes are disclosed. These airplanes must be assigned to their final time slot (within the given time window). This happens in a multistage manner with s being the number of disclosures, i.e. the number of universal variable blocks, e.g. s=2 stands for the quantification sequence ∃ ∀ ∃ ∀ ∃. The universal player is restricted in the way she is allowed to select the time windows: the overall time window lengths must exceed a given value. This can be modeled either explicitly by using universal constraints or implicitly by adding variables and constraint that detect and penalize such a violation. For a more thorough introduction we refer to this Ph.D. thesis or this site. Runway scheduling instances have the naming scheme RWS-|A|-b-|S|-s-R-t.qlp. Again, R is the seed for the random number generator. t∈{s,u} represents the model type: s for "standard QIP" and u for "QIP with universal constraints". We provide the following testsets:
 
 * |A|∈{2,...,8}, |S|∈{3,...,10}, b∈{2,3,4} with s=1. 20 instances per constellation:
-    * <a href="/../downloads/instances/rsi/RWS_SingleStage_s.zip" download>Download: 3360 QIP instances</a>
-    * <a href="/../downloads/instances/rsi/RWS_SingleStage_u.zip" download>Download: 3360 QIP instances with universal constrains</a>
+    * <a href="../downloads/instances/rsi/RWS_SingleStage_s.zip" download>Download: 3360 QIP instances</a>
+    * <a href="../downloads/instances/rsi/RWS_SingleStage_u.zip" download>Download: 3360 QIP instances with universal constrains</a>
 * |A|=7, |S|=12, b=3 and s∈{1,..,4}. 300 instances per constellation:
-    * <a href="/../downloads/instances/rsi/RWS_A7_b3_S12_s.zip" download>Download: 1200 QIP instances</a>
-    * <a href="/../downloads/instances/rsi/RWS_A7_b3_S12_u.zip" download>Download: 1200 QIP instances with universal constrains</a>
+    * <a href="../downloads/instances/rsi/RWS_A7_b3_S12_s.zip" download>Download: 1200 QIP instances</a>
+    * <a href="../downloads/instances/rsi/RWS_A7_b3_S12_u.zip" download>Download: 1200 QIP instances with universal constrains</a>
 
 ---
 
@@ -77,11 +77,9 @@ The Quantified Satisfiability problem (QSAT), which is also know as the satisfia
 Here, we present some further examples from these two sub-disciplines, collected from qbflib.org and miplib and converted to QLP-format. 
 
 
-Instance collection IP based
-
-Instance collection MIP based
-
-Instance collection QBF based
+* <a href="../downloads/instances/other/convertedIP.tar.gz" download>Instance collection IP based</a>
+* <a href="../downloads/instances/other/convertedMIP.tar.gz" download>Instance collection MIP based</a>
+* <a href="../downloads/instances/other/collection.tar.gz" download>Instance collection QBF based</a>
 
 Please note that not all instances have been converted 1:1 due to some border cases in the conversion.
 

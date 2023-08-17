@@ -26,7 +26,7 @@ In order to execute our batch file that builds the project your systems must be 
 
 In order to use Yasol on Windows you need to perform the following steps:
 
-1. Download the current Yasol version (3.9.9.3.1 from 2020; the latest version from 2023 is currently only available for Mac and linux) and unpack it (Download).
+1. Download the current Yasol version (3.9.9.3.1 from 2020; the latest version from 2023 is currently only available for Mac and linux) and unpack it (<a href="../downloads/yasol/windows/current_version/Yasol_3.9.9.3.1_Windows.zip" download>Download</a>).
 2. Open the x64 Developer Command Prompt.
 3. change your directory to the Yasol main folder.
 4. Provide the location of your compiler by setting the variable CC. We recommend clang++. This might look like
@@ -39,10 +39,11 @@ In order to use Yasol on Windows you need to perform the following steps:
     * Yasol_CLP ../../../Data/p2756.qlp
 
 **Executable:** <br>
-For Windows users we also provide an executable version which uses Coin Or.
+For Windows users we also provide an <a href="../downloads/yasol/windows/current_version/Yasol_3.9.9.3.1_Windows_executable.zip" download>executable version</a> which uses Coin Or.
 
-**Older Versions:** <br>
-Yasol_O-1.3.3(2017). Windows Sources: Download Windows Executable: Download
+**Older Versions (Yasol_O-1.3.3(2017)):** <br>
+Windows Sources: <a href="../downloads/yasol/windows/older_version/Yasol_O-1.3.3_Windows.tar.gz" download>Download</a> <br>
+Windows Executable: <a href="../downloads/yasol/windows/older_version/Yasol_CLP_executable.rar" download>Download</a>
 
 ---
 ### Getting started on Mac OS and Linux
@@ -51,7 +52,7 @@ Since Yasol has no own built-in LP solver you either need to install IBMÂ® ILOGÂ
 
 In order to use Yasol on Mac or Linux you need to perform the following steps:
 
-1. Download the latest Yasol version (4.0.1.5 from 2023) and unpack it (Mac: Download, Linux: Download)
+1. Download the latest Yasol version (4.0.1.5 from 2023) and unpack it (Mac: <a href="../downloads/yasol/mac/current_version/Yasol_4.0.1.5_b_mac.zip" download>Download</a>, Linux: <a href="../downloads/yasol/linux/current_version/Yasol_4.0.1.5_b_linux.zip" download>Download</a>)
 2. Read the README and edit the respective entries in "build_Yasol.bat" to specify your system settings and in particular the location of your COIN OR or CPLEX distribution by setting the variables YASOL_CLP_PATH or YASOL_CPLEX_PATH, respectively. This might look like:
     * export YASOL_CLP_PATH=/opt/tools/coinor_tool
     * export YASOL_CPLEX_PATH=/opt/ibm/ILOG/CPLEX_Studio1261/cplex
@@ -70,8 +71,12 @@ In order to use Yasol on Mac or Linux you need to perform the following steps:
 
 **Older versions:**
 
-* Yasol_3.9.9.3.1(2020) Mac: Download, Linux: Download
-* Yasol_O-1.3.3(2017). Mac: Download, Linux: Download
+* Yasol_3.9.9.3.1(2020):
+    * Mac: <a href="../downloads/yasol/mac/older_version/Yasol_3.9.9.3.1_Mac.zip" download>Download</a>
+    * Linux: <a href="../downloads/yasol/linux/older_version/Yasol_3.9.9.3.1_Linux.zip" download>Download</a>
+* Yasol_O-1.3.3(2017):
+    * Mac: <a href="../downloads/yasol/mac/older_version/Yasol_O-1.3.3_Mac.tar.gz" download>Download</a>
+    * Linux: <a href="../downloads/yasol/linux/older_version/Yasol_O-1.3.3_Linux.tar.gz" download>Download</a>
 ---
 ### Known Bugs
 
