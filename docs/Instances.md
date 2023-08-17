@@ -12,7 +12,7 @@ The here provided are instances are formatted in the  qlp file format. Note that
 
 Quantified Integeger Programs (QIP) are Q-MIPs with only integer variables. A special case of QIPs are Quantified Boolean Programs (QBP) with only boolean variables. The constraints are linear and an objective typically exists.
 
-<a href="../downloads/instances/mrsp/QIP.tar.gz" download>QIP test instances</a>
+<a href="../downloads/instances/test_instance/QIP.tar.gz" download>QIP test instances</a>
 
 ---
 
@@ -22,10 +22,10 @@ The task is to select p out of n=2p items, such that the costs are minimized<sup
 
 * N=4, n∈{10,20,30,40,50} and S∈{1,..,8}. 50 instances per constellation:
     * <a href="../downloads/instances/mrsp/Selection_QIP_4Scenarios.zip" download>Download: 2000 QIP instances</a>
-    * <a href="downloads/instances/mrsp/Selection_QIPPU_4Scenarios.zip" download>Download: 2000 QIP instances with universal constrains</a>
+    * <a href="../downloads/instances/mrsp/Selection_QIPPU_4Scenarios.zip" download>Download: 2000 QIP instances with universal constrains</a>
 * n=10, N=2^k, k∈{1,..,8} and S=s∈{1,..,8} with k+s≤11. 50 instances per constellation:
-    * <a href="../../downloads/instances/mrsp/Selection_QIP_10items.zip" download>Download: 2450 QIP instances</a>
-    * <a href="https://github.com/YasolQIPSolver/yasol.github.io/blob/main/docs/downloads/instances/mrsp/Selection_QIPPU_10items.zip" download>Download: 2450 QIP instances with universal constrains</a>
+    * <a href="../downloads/instances/mrsp/Selection_QIP_10items.zip" download>Download: 2450 QIP instances</a>
+    * <a href="../downloads/instances/mrsp/Selection_QIPPU_10items.zip" download>Download: 2450 QIP instances with universal constrains</a>
 
 ---
 
@@ -34,8 +34,8 @@ The task is to select p out of n=2p items, such that the costs are minimized<sup
 For a weighted bipartite graph G=(V,E,c) with V=A∪B, n=|A|=|B| one wants to determine a perfect matching of minimum costs<sup>1, 2</sup>. Similar to the selection problem, this happens in a multistage manner: In a first (existential) decision stage edges can be selected for fixed costs. Then, in a universal decision stage, one of N cost scenario is selected and in the subsequent existential decision stage further edges can be selected. Those two stages (disclosure of a scenario and selection of edges) are repeated S times. Again, we provide two different quantified models: a standard QIP and a QIP with universal constraints. Assignment instances have the naming scheme selection-n-N-S-R-t.qlp. R is the seed for the random number generator. t∈{s,u} represents the model type: s for "standard QIP" and u for "QIP with universal constraints". We provide the following testset:
 
 * n∈{4,5,6,7,8,9,10}, N∈{2,4,8} and S∈{1,2,3,4}. 50 instances per constellation:
-    * <a href="/../downloads/instances/mrap/Assignment_QIP.zip" download>Download: 4200 QIP instances</a>
-    * <a href="/../downloads/instances/mrap/Assignment_QIPPU.zip" download>Download: 4200 QIP instances with universal constrains</a>
+    * <a href="../downloads/instances/mrap/Assignment_QIP.zip" download>Download: 4200 QIP instances</a>
+    * <a href="../downloads/instances/mrap/Assignment_QIPPU.zip" download>Download: 4200 QIP instances with universal constrains</a>
 
 ---
 
