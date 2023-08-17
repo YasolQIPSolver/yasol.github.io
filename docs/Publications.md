@@ -1,22 +1,134 @@
 # Publications
 
-### Paper
+### A general model-and-run solver for multistage robust discrete linear optimization
 
-The paper is available <a href="https://publik.tuwien.ac.at/files/publik_300078.pdf" target="_blank">here</a>.
+The paper is available <a href="https://arxiv.org/abs/2210.11132" target="_blank">here</a>.
 
 ```bibtex
-@inproceedings{KirchwegerS21,
-  author    = {Markus Kirchweger and
-               Stefan Szeider},
-  title     = {{SAT} Modulo Symmetries for Graph Generation},
-  booktitle = {27th International Conference on Principles and Practice of Constraint
-               Programming, {CP} 2021, Montpellier, France (Virtual Conference),
-               October 25-29, 2021},
-  series    = {LIPIcs},
-  volume    = {210},
-  pages     = {34:1--34:16},
-  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
-  year      = {2021},
-  doi       = {10.4230/LIPIcs.CP.2021.34}
+@article{hartisch2022general,
+  title={A general model-and-run solver for multistage robust discrete linear optimization},
+  author={Hartisch, Michael and Lorenz, Ulf},
+  journal={arXiv preprint arXiv:2210.11132},
+  year={2022}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+```
+
+### Quantified integer programming with polyhedral and decision-dependent
+
+The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
+
+```bibtex
+@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
 }
 ```
