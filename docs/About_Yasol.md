@@ -18,7 +18,7 @@ In a recent computational study we showed that solving robust discrete problems 
 
 For some historical notes on Quantified Programming, Linear Programming and personal credits, we refer to our [history page](Credits.md#history-q-mip-and-others). 
 
-For details of how to use the solver and about details of input formats etc. we refer to our [download page](Download.md).
+For details of how to use the solver and about details of input formats etc. we refer to our [download](Download.md) and [instances page](Instances.md).
 
 <sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. <a href=https://link.springer.com/content/pdf/10.1007/978-3-319-71649-7_19.pdf target="_blank">Yasol: An Open Source Solver for Quantified Mixed Integer Programs.</a> ACG 2017: 224-233 <br>
 <sup>2</sup> Marc Goerigk, Michael Hartisch. <a href=https://www.sciencedirect.com/science/article/pii/S0305054821001908?via%3Dihub target="_blank">Multistage Robust Discrete Optimization via Quantified Integer Programming.</a> Computers & Operations Research, 135:105434, 2021 <br>
@@ -37,7 +37,7 @@ After you have downloaded and compiled the current Yasol version for your operat
 Note that these requirements are fulfilled when starting Yasol from "Your_Yasol_Directory/bin", where the executable is located after compiling.
 
 **Calling the Solver:** <br>
-In order to solve an instance first be sure it adheres to the [QLP file format](Download.md#qmip-instances-in-the-qlp-file-format). The solver is invoked using the following call:
+In order to solve an instance first be sure it adheres to the [QLP file format](About_Yasol.md#the-qlp-file-format). The solver is invoked using the following call:
 
 `./Yasol_CPLEX <Instance> [<InformationLevel>] [<TimeLimit>]`
 
@@ -75,7 +75,7 @@ s.t.	-	x<sub>2</sub>	-	x<sub>3</sub>	≤	-1 <br>
 -->
 
 
-$$ \exists x_i \in \left\{0,1\right\} \quad \forall x_2 \in \left\{0,1\right\} \quad \exists x_3 \in \left\{0,1,2\right\}: $$
+$$ \exists x_1 \in \left\{0,1\right\} \quad \forall x_2 \in \left\{0,1\right\} \quad \exists x_3 \in \left\{0,1,2\right\}: $$
 
 \begin{align}
 \min \quad -&x_1 - 2x_2 -2x_3 \\[5pt]

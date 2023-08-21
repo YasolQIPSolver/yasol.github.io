@@ -173,7 +173,7 @@ There is a growing number of third-party tools and apps developed for Yasol and 
 * Converter for different file formats of quantified programs, by Niklas Lorenz. <a href="https://github.com/niklaslorenz/qpra.git/" target="_blank">
     <i class="fa fa-github"></i> GitHub</a>
 
-* Julia/JuMP interface for the Yasol solver, by Hendrik Becker and Michael Hartisch. <a href="https://https://github.com/MichaelHartisch/YasolSolver.jl target="_blank">
+* Julia/JuMP interface for the Yasol solver, by Hendrik Becker and Michael Hartisch. <a href="https://github.com/MichaelHartisch/YasolSolver.jl" target="_blank">
     <i class="fa fa-github"></i> GitHub</a>
 
 ---

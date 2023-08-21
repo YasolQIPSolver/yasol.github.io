@@ -1,5 +1,7 @@
 # Publications
 
+---
+
 ### A general model-and-run solver for multistage robust discrete linear optimization
 
 The paper is available <a href="https://arxiv.org/abs/2210.11132" target="_blank">here</a>.
@@ -13,6 +15,8 @@ The paper is available <a href="https://arxiv.org/abs/2210.11132" target="_blank
 }
 ```
 
+---
+
 ### Quantified integer programming with polyhedral and decision-dependent
 
 The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
@@ -24,6 +28,8 @@ The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705
   year={2020}
 }
 ```
+
+---
 
 ### Multistage robust discrete optimization via quantified integer programming
 
@@ -41,6 +47,8 @@ The paper is available <a href="https://www.sciencedirect.com/science/article/pi
 }
 ```
 
+---
+
 ### Adaptive Relaxations for Multistage Robust Optimization
 
 The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-030-89188-6_36" target="_blank">here</a>.
@@ -56,6 +64,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
 }
 ```
 
+---
+
 ### A novel application for game tree search-exploiting pruning mechanisms for quantified integer programs
 
 The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-030-65883-0_6" target="_blank">here</a>.
@@ -67,6 +77,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
   year={2020}
 }
 ```
+
+---
 
 ### Robust multistage optimization with decision-dependent uncertainty
 
@@ -83,6 +95,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
 }
 ```
 
+---
+
 ### Yasol: an open source solver for quantified mixed integer programs
 
 The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-319-71649-7_19" target="_blank">here</a>.
@@ -97,6 +111,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
   organization={Springer}
 }
 ```
+
+---
 
 ### Quantified Integer Programs with Polyhedral Uncertainty Set
 
@@ -113,6 +129,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
 }
 ```
 
+---
+
 ### Quantified linear programs: a computational study
 
 The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-642-23719-5_18" target="_blank">here</a>.
@@ -128,6 +146,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
 }
 ```
 
+---
+
 ### Modeling games with the help of quantified integer linear programs
 
 The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-642-31866-5_23" target="_blank">here</a>.
@@ -142,6 +162,8 @@ The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-
   organization={Springer}
 }
 ```
+
+---
 
 ### Quantified combinatorial optimization
 

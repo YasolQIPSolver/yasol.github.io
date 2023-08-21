@@ -181,7 +181,7 @@ The following QIP problem definition and, as a consequence the content of this p
 <div style="text-align: center;">
     <figure style="display: inline-block;">
         <img src="../images/Example_1.png" alt="Example_1" style="max-width: 80%;">
-        <figcaption>Figure 1: Example with 4 airplanes and 6 possible time slots. 2 airplanes can be scheduled at each time slot (b=2). The initial planning costs are given and the possible time windows (consisting of two time slots) for each airplane are depicted as sliders below.</figcaption>
+        <figcaption>Figure: Example with 4 airplanes and 6 possible time slots. 2 airplanes can be scheduled at each time slot (b=2). The initial planning costs are given and the possible time windows (consisting of two time slots) for each airplane are depicted as sliders below.</figcaption>
     </figure>
 </div>
 
