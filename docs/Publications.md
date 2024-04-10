@@ -22,9 +22,10 @@ The paper is available <a href="https://arxiv.org/abs/2210.11132" target="_blank
 The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.
 
 ```bibtex
-@article{hartisch2020quantified,
+@phdthesis{hartisch2020quantified,
   title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
   author={Hartisch, Michael},
+  school={University of Siegen, Germany},
   year={2020}
 }
 ```
