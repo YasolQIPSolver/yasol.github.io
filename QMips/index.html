@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Q-MIPs - Yasol</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Q-MIPs";
+        var mkdocs_page_input_path = "QMips.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Yasol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Download/">Download</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../About_Yasol/">About Yasol</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Instances/">Instances</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Q-MIPs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#quantified-mixed-integer-linear-programming">Quantified (Mixed) Integer Linear Programming</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-tiny-q-mip">A tiny Q-MIP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-universal-constraint-system-allowing-polyhedral-and-decision-dependent-uncertainty">A universal constraint system: Allowing polyhedral and decision-dependent uncertainty</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantified-programs-applied-to-runway-scheduling">Quantified Programs applied to Runway Scheduling</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Publications/">Publications</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Credits/">Credits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Team/">Team</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Yasol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Q-MIPs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="q-mips">Q-MIPs</h1>
+<!-- ![HomePic](images/HomePic.png) -->
+
+<h3 id="quantified-mixed-integer-linear-programming">Quantified (Mixed) Integer Linear Programming</h3>
+<p>Mixed-integer linear programming (MIP) is a well-established state-of-the-art technique for computer-aided optimization. However, companies observe an increasing danger of disruptions that prevent them from acting as planned. One reason is that input data is often assumed to be deterministic, but in reality, they are afflicted with uncertainties which cannot be adequately described in MIPs, often. This is the point where Q-MIPs are intended to support future modeling.</p>
+<p>In 2007, Subramani coined the terms Quantified Linear Program and Quantified Integer Program and thus extended the traditional notions of Linear and Integer Programming<sup>1</sup>. The resulting quantified programs are both a strong modelling language and an intuitive input to next generation optimization software.</p>
+<p>We extended this notion one step further and introduced a minimax objective<sup>2</sup>:</p>
+<p><span class="arithmatex">\(\textbf{Definition}~\text{(Quantified Linear Program (QLP))}\)</span>.
+Let there be a vector <span class="arithmatex">\(x = (x_1,...,x_n)^T \in \mathbb{Q}^n\)</span> of variables, integral lower and upper bounds <span class="arithmatex">\(l \in \mathbb{Z}^n\)</span> with <span class="arithmatex">\(l_i \leq x_i \leq u_i\)</span>, a coefficient matrix <span class="arithmatex">\(A \in \mathbb{Q}^{m \times n}\)</span>, a righthand side vector <span class="arithmatex">\(b \in \mathbb{Q}^m\)</span> and a vector of quantifiers <span class="arithmatex">\(Q = (Q_i, ..., Q_n)^T \in \left\{\forall, \exists \right\}^n\)</span>, let the term <span class="arithmatex">\(Q \circ x \in \left[ l,u \right]\)</span> with the component-wise binding operator <span class="arithmatex">\(\circ\)</span>  denote the quantification vector <span class="arithmatex">\((Q_1x_1 \in \left[ l_1,u_1 \right], ..., Q_nx_n \in \left[ l_n, u_n \right])^T\)</span> such that every quantifier <span class="arithmatex">\(Q_i\)</span> binds the variable <span class="arithmatex">\(x_i\)</span> ranging over the interval <span class="arithmatex">\(\left[ l_i, u_i \right]\)</span>. Each maximal consecutive subsequence of <span class="arithmatex">\(Q\)</span> consisting of identival quantifiers is called a quantifier block - the corresponding subsequence of <span class="arithmatex">\(x\)</span> is called a variable block, with the <span class="arithmatex">\(i\)</span>-th block being denoted by <span class="arithmatex">\(x^{i}\)</span>. Let there also be a vector of objective coefficients <span class="arithmatex">\(c \in \mathbb{Q}^n\)</span>. We call <span class="arithmatex">\((Q, l, u, A, b, c)\)</span> with </p>
+<div class="arithmatex">\[\begin{align}
+z = \min_{x^1}(c^1x^1 + \max_{x^2}(c^2x^2 + &amp;\min_{x^3}(c^3x^3 + \max_{x^4}(... \min_{x^m} c^mx^m)))) \\[5pt]
+Q \circ x \in &amp;\left[ l, u \right]: Ax \leq b
+\end{align}\]</div>
+<p>a quantified linear program (QLP) with objective function.</p>
+<!-- <img src="../images/QLPpObjDef.png" alt="QLPpObjDef" style="max-width: 80%;"> -->
+
+<p>... as well as a restricted mixed version with the following attributes:</p>
+<ul>
+<li>the objective is minmax (more exactly: min max min … max min max) and is linear for any single game</li>
+<li>integer variables are allowed on all exist-stages</li>
+<li>(only) binary variables are allowed on universal stages</li>
+<li>continuous variables are allowed (only) on the last stage, assuming it is an existential stage</li>
+<li>quantifiers are either existential or universal</li>
+</ul>
+<p><sup>1</sup> K. Subramani: On a decision procedure for quantified linear programs. Ann. Math. Artif. Intell. 51(1): 55-77 (2007) <br>
+<sup>2</sup> U. Lorenz, J. Wolf: Solving Multistage Quantified Linear Optimization Problems with the Alph-beta nested Benders Decomposition, EURO Journal on Computational Optimization, pp. 349 - 370, Springer 2015</p>
+<hr />
+<h3 id="a-tiny-q-mip">A tiny Q-MIP</h3>
+<p>Let <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_3\)</span> be existential variables and <span class="arithmatex">\(x_2\)</span> a universal variable. Thus we have, <span class="arithmatex">\(\exists x_1~ \forall x_2~ \exists x_3\)</span>. The aim is to find an optimal first stage setting for <span class="arithmatex">\(x_1\)</span> such that the objective</p>
+<div class="arithmatex">\[
+\max_{x_1}(x_1 + \min_{x_2}(x_2 + \max_{x_3}(x_3))) 
+\]</div>
+<p>is optimized, and such that </p>
+<!--
+-2x<sub>2</sub> -1x<sub>3</sub> ≤ -2 <br>
+-1x<sub>1</sub> +2x<sub>2</sub> +1x<sub>3</sub> ≤ 2 <br>
+ 2x<sub>1</sub> + 4x<sub>2</sub> ≤ 6
+
+0 ≤ x<sub>1</sub> ≤ 2 <br>
+0 ≤ x<sub>2</sub> ≤ 1 <br>
+0 ≤ x<sub>3</sub> ≤ 2
+-->
+
+<div class="arithmatex">\[\begin{align}
+-2x_2 - x_3 &amp;\leq -2 \\[5pt]
+-x_1 + 2x_2 + x_3 &amp;\leq 2 \\[5pt]
+2x_1 + 4x_2 &amp;\leq 6 \\[10pt]
+0 \leq x_1 \leq 2 \\[5pt]
+0 \leq x_2 \leq 1 \\[5pt]
+0 \leq x_3 \leq 2
+\end{align}\]</div>
+<p>Let <span class="arithmatex">\(x_1\)</span> be integer, <span class="arithmatex">\(x_2\)</span> binary, and <span class="arithmatex">\(x_3\)</span> be continuous.</p>
+<p>Then the objective value is 3 and the optimal assignment of  <span class="arithmatex">\(x_1\)</span>  is 1. Moreover, <span class="arithmatex">\(x_3\)</span> should be set to either 0 or 2, depending on whether <span class="arithmatex">\(x_2\)</span> becomes 1 or 0. It is possible to visualize the policy. In the following picture, you see an outer 3d-polytope which is caught in a box. That is the polytope which is generated by the existential LP-relaxation, i.e. all variables are assumed to be existential and continuous. Within the given polytope you see another one, in light red. That is the union of all 3D-points that are part of any feasible policy of the existential player, given the original <span class="arithmatex">\(\exists~\forall~\exists\)</span> quantifier string. You can also see that <span class="arithmatex">\(x_1\)</span> can be set between 0 and 1 (i.e. half of the box in <span class="arithmatex">\(x_1\)</span>-direction) and depending on how <span class="arithmatex">\(x_2\)</span> is set (either 0 or 1), <span class="arithmatex">\(x_3\)</span> can be moved up to its upper bound 2 or must smaller or equal to 1.</p>
+<p>You can download the QLP file for this instance. For a closer look at the file format see this <a href="../About_Yasol/#the-qlp-file-format">page</a>.</p>
+<hr />
+<h3 id="a-universal-constraint-system-allowing-polyhedral-and-decision-dependent-uncertainty">A universal constraint system: Allowing polyhedral and decision-dependent uncertainty</h3>
+<p>A QIP is inherently asymmetric, as even though the min-max semantic of the objective is symmetric, the universally quantified variables are only restricted to their domain (solely given by bounds), whereas the existential player—in addition to having to obey the variable bounds—also must ensure the fulfillment of the constraint system. In other words: only the existential player has to cope with a polytope influenced by the opponent’s decisions whereby a polyhedral, or even decision-dependent, uncertainty set can only be modeled via tricky and not straight-forward modeling techniques. In order to be able to model the uncertainty set in a more simple way a second constraint system <span class="arithmatex">\(A^\forall x \leq b^\forall\)</span> was introduced, which allowed to explicitly model a polyhedral uncertainty set<sup>1</sup>. The usage of this universal constraint system was later extended to even allow decision-dependent uncertainty set<sup>2</sup>. For both modeling frameworks we also extended our solution framework<sup>3</sup>.</p>
+<p><strong>Example:</strong> <br>
+We consider a binary quantified program with an existential and a universal constraint system. As existentially quantified variables (<span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span>) have non-zero entries in the universal constraint system this instance is a QIP with decision-dependent uncertainty called QIP with interdependent domains. In particular, if both <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are set to 1 the universal variable must not be 1. However, the existential player also has to ensure that setting <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> to 1 will no render the existential constraint system violated. As this is not the case, <span class="arithmatex">\(x_1 = 1\)</span> and <span class="arithmatex">\(x_2 = 1\)</span> is a legal variable assignment. In this case setting <span class="arithmatex">\(x_3=1\)</span> would be an illegal assignment by the universal player, as it irrevocably violated the universal constraint system.</p>
+<!-- <img src="../images/BeispielQIPID.png" alt="Beispiel QIPID" style="max-width: 80%;"> -->
+
+<div class="arithmatex">\[\begin{align}
+c^Tx &amp;: \min x_1-2x_2+2x_3+x_4 \\[5pt]
+Q \circ \mathcal{L} &amp;: \exists x_1 \in \left\{0, 1 \right\} \exists x_2 \in \left\{0, 1 \right\} \forall x_3 \in \left\{0, 1 \right\} \exists x_4 \in \left\{0, 1 \right\} \\[5pt]
+A^\exists x \leq b^\exists &amp;: 
+\begin{pmatrix}
+1 &amp; -2 &amp; 1 &amp; -1 \\
+1 &amp; 1 &amp; 1 &amp; -1
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+\end{pmatrix}
+\leq 
+\begin{pmatrix}
+1 \\
+2
+\end{pmatrix} \\[5pt]
+A^\forall x \leq b^\forall &amp;:
+\begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+\end{pmatrix}
+\leq
+\begin{pmatrix}
+2 
+\end{pmatrix}
+\end{align}\]</div>
+<p>The optimal solution of this instance is -1 with principal variation (1,1,0,0). In order to solve this instance with our solver, a universal constraint must be explicitly named in the QLP file using the keyword UNCERTAINTY SUBJECT TO [<a href="http://tm-server-2.wiwi.uni-siegen.de/t3-q-mip/fileadmin/downloads/instances/Example_QIPID_Instance_01.qlp" target="_blank">Download instance</a>].</p>
+<p>MINIMIZE <br>
+x1 -2x2 +2x3 +x4 <br>
+SUBJECT TO <br>
+x1 -2x2 +x3 -x4 &lt;= 1 <br>
+x1 +x2 +x3 -x4 &lt;= 2 <br>
+UNCERTAINTY SUBJECT TO <br>
+x1 +x2 +x3 &lt;= 2 <br>
+BOUNDS <br>
+0 &lt;= x1 &lt;= 1 <br>
+0 &lt;= x2 &lt;= 1 <br>
+0 &lt;= x3 &lt;= 1 <br>
+0 &lt;= x4 &lt;= 1 <br>
+BINARIES <br>
+x1 x2 x3 x4 <br>
+EXISTS <br>
+x1 x2 x4 <br>
+ALL <br>
+x3 <br>
+ORDER <br>
+x1 x2 x3 x4 <br>
+END <br></p>
+<p><strong>Simply Restricted Instances:</strong> <br>
+In order to ensure that universal variable assignments are legal, i.e. that they do not eventually result in a violation of the universal constraint system, the feasibility of the universal constraint system must be checked in each step. This can be tedious as this means solving an IP at each universal decision node. However, we observed the following in many multistage robust problems:</p>
+<ul>
+<li>Uncertainty maybe can be manipulated, but it cannot be 'defeated' in the sense that no legal move remains.</li>
+<li>Potential realizations of uncertain parameters are easily recognizable, i.e. classifying a universal variable assignment as legal or illegal should not be an NP-complete problem.</li>
+</ul>
+<p>We formalized this observation and we call instances those observations apply to simply restricted.</p>
+<!-- <img src="../images/SimplyRestricted.png" alt="Restricted" style="max-width: 80%;"> -->
+
+<p><span class="arithmatex">\(\textbf{Definition}~(\text{Simply Restricted}~QIP^{ID})\)</span>.
+Let <span class="arithmatex">\(P = (A^\exists, A^\forall, b^\exists, b^\forall, c, \mathcal{L}, Q)\)</span> be a <span class="arithmatex">\(QIP^{ID}\)</span>. If the two following conditions are fulfilled, we call <span class="arithmatex">\(P\)</span> a simply restricted <span class="arithmatex">\(QIP^{ID}\)</span>.</p>
+<ol>
+<li>For each universal variable block <span class="arithmatex">\(i \in \mathcal{A}\)</span> we demand</li>
+</ol>
+<div class="arithmatex">\[\begin{equation*}
+\forall~ (\hat{x}^{(1)}\in \mathcal{L}^{(1)}, \hat{x}^{(2)} \in \mathcal{F}^{(2)}, ..., \hat{x}^{(i-2)} \in \mathcal{F}^{(i-2)}, \hat{x}^{(i-1)} \in \mathcal{L}^{(i-1)}): \mathcal{F}^{(i)} \neq \emptyset.
+\end{equation*}\]</div>
+<ol>
+<li>Let <span class="arithmatex">\(i \in \mathcal{A}\)</span> and let <span class="arithmatex">\(\hat{x}^{(1)} \in \mathcal{L}^{(1)}, ..., \hat{x}^{(i-1)} \in \mathcal{L}^{(i-1)}\)</span> be a partial variable assignment up to block <span class="arithmatex">\(i\)</span>. If <span class="arithmatex">\(\tilde{x}^{(i)} \not\in \mathcal{F}^{(i)} (\hat{x}^{(1)}, ..., \hat{x}^{(i-1)})\)</span>, then</li>
+</ol>
+<div class="arithmatex">\[\begin{equation*}
+\exists ~ k \in \left\{ 1, ..., m_\forall \right\}: \sum_{j &lt; i} A_{k,(j)}^\forall \hat{x}^{(j)} + A_{k,(i)}^\forall \tilde{x}^{(i)} + \sum_{j&gt;i} \min_{x^{(j)} \in \mathcal{L}^{(j)}} A_{k,(j)}^\forall x^{(j)} \not \leq b_k^\forall.
+\end{equation*}\]</div>
+<p>The benefit of having a simply restricted instance is that then the legality of a universal variable assignment can be checked be simply traversing the universal constraints and checking whether they remain satisfiable, even in the worst case. Thus, the satisfiability of entire universal constraint system can be checked locally rather than solving the entire IP. If your instance is simply restricted you can specify "isSimplyRestricted=1" in the Yasol.ini file. If your instance does not fulfill the requirements, or if you are not sure, simply set "isSimplyRestricted" to zero, and each universal variable assignment will be verified by solving the corresponding universal IP. </p>
+<p><sup>1</sup> M. Hartisch, T. Ederer, U. Lorenz, J. Wolf. <a href="http://doi.org/10.1007/978-3-319-50935-8_15" target="_blank">Quantified Integer Programs with Polyhedral Uncertainty Set</a>. In: A. Plaat, W. Kosters, J. van den Herik (eds) Computers and Games. CG 2016. Lecture Notes in Computer Science, vol 10068. Springer, Cham, 2016 <br>
+<sup>2</sup> M. Hartisch, U. Lorenz. <a href="https://doi.org/10.1007/978-3-030-29908-8_36" target="_blank">Mastering uncertainty: Towards robust multistage optimization with decision dependent uncertainty</a>. In 16th Pacific Rim International Conference on Artificial Intelligence, PRICAI 2019, Seiten 446–458. Springer, 2019 <br>
+<sup>3</sup> M. Hartisch. <a href="http://dx.doi.org/10.25819/ubsi/4841" target="_blank">Quantified Integer Programming with Polyhedral and Decision-Dependent Uncertainty</a>. PhD thesis, University of Siegen, Germany, 2020</p>
+<hr />
+<h3 id="quantified-programs-applied-to-runway-scheduling">Quantified Programs applied to Runway Scheduling</h3>
+<p>The following QIP problem definition and, as a consequence the content of this page, is a result of cooperative work between University Siegen (S. Gnad, M. Hartisch, U. Lorenz) and FAU Erlangen (L. Hupp, F. Liers, A. Peter). We used QIPs to model and solve a matching problem that can be interpreted as an airplane scheduling problem in which each airplane must be assigned to a time slot and at most b airplanes can be assigned to one time slot. This b-matching is enhanced by uncertain time intervals in which an airplane must land. For reasons of simplicity we will use the airplane scheduling interpretation to explain our intentions.</p>
+<div style="text-align: center;">
+    <figure style="display: inline-block;">
+        <img src="../images/Example_1.png" alt="Example_1" style="max-width: 80%;">
+        <figcaption>Figure: Example with 4 airplanes and 6 possible time slots. 2 airplanes can be scheduled at each time slot (b=2). The initial planning costs are given and the possible time windows (consisting of two time slots) for each airplane are depicted as sliders below.</figcaption>
+    </figure>
+</div>
+
+<p>Broadly speaking, we are interested in an initial plan that can be fixed cheaply if the mandatory time windows (the sliders in the figure) for some planes do not contain the initially scheduled time slot. Reasons for such variations (in the arrival time) might be adjusted airspeed (due to weather) or operational problems. </p>
+<p>The incurred costs are composed of the costs for the initial plan and the fixing costs. The costs for the initial plan only depend on the the initial assignment of planes to time slots regarding predetermined costs: In the example above assigning airplane 2 to time slot 4 would result in costs of 2 monetary units.</p>
+<p>There are some ideas for the composition of the fixing costs, for example:</p>
+<ul>
+<li>rescheduling one airplane results in a fixed fee </li>
+<li>rescheduling one airplane results in costs depending on the newly selected time slot</li>
+<li>rescheduling one airplane results in costs depending on the initial and the newly selected time slot</li>
+</ul>
+<p>For simplicity and a more general presentation, the costs of replacing airplane i depend on a function <span class="arithmatex">\(f(x_{i^*},y_{i^*})\)</span> representing the relation between initial plan, fixed plan and fixing costs. Depending on the selected cost type, this function can be modeled using linear constraints.</p>
+<p><strong>Basic quantified program for the airplane runway scheduling problem:</strong></p>
+<!-- <img src="../images/Modell.png" alt="Modell" style="max-width: 80%;"> -->
+
+<div class="arithmatex">\[\begin{align}
+\min \quad &amp; \sum_{i \in A}\sum_{j \in W} c_{i,j}x_{i,j} + \max \left\{ \min \left\{ \sum_{i \in A} c_i^{fix} \right\} \right\} \\
+\mathrm{s.t.} \quad &amp; \exists X \in \left\{0, 1 \right\}^{\left| A \right| \times \left| W \right|} \\
+&amp; \forall S \in \mathcal{S}, L \in \mathcal{L} \\
+&amp; \exists Y \in \left\{0, 1 \right\}^{\left| A \right| \times \left| W \right|}: \\
+&amp; \sum_{j \in W} x_{i,j} = 1 \quad &amp;&amp; \forall i \in A \\
+&amp; \sum_{i \in A} x_{i,j} \leq b \quad &amp;&amp; \forall j \in W \\
+&amp; \sum_{j \in W} y_{i,j} = 1 \quad &amp;&amp; \forall i \in A \\
+&amp; \sum_{i \in A} y_{i,j} \leq b \quad &amp;&amp; \forall j \in W \\
+&amp; s_i \leq \sum_{j \in W} j \cdot y_{i,j} \leq s_i+l_i \quad &amp;&amp; \forall i \in A \\
+&amp; c_i^{fix} = f(x_{i,*}, y_{i,*}) \quad &amp;&amp; \forall i \in A \\
+\end{align}\]</div>
+<p>Brief explanation of the model:</p>
+<ol>
+<li>three stage objective function<ul>
+<li>first stage: select initial plan resulting in initial costs</li>
+<li>second stage: uncertain events → new conditions regarding allowed time slots (the start <span class="arithmatex">\((s_i \in S)\)</span> and the length <span class="arithmatex">\((l_i \in L)\)</span> of the time window is selected for each airplane <span class="arithmatex">\(i\)</span>)</li>
+<li>third stage: if necessary fix the initial plan causing additional costs</li>
+</ul>
+</li>
+<li>First stage existential variables: Initial scheduling variables</li>
+<li>Second stage universal variables: Specification of the starting point (<span class="arithmatex">\(s\)</span>) and the length (<span class="arithmatex">\(l\)</span>) of the mandatory time window for each airplane</li>
+<li>Third stage existential variables: Final scheduling variables respecting the time windows defined in stage two </li>
+<li>Ensures that each airplane is assigned to exactly one time slot in the initial plan</li>
+<li>Ensures that each time slot can only hold b airplanes in the initial plan </li>
+<li>Ensures that each airplane is assigned to exactly one time slot in the fixed plan</li>
+<li>Ensures that each time slot can only hold b airplanes in the fixed plan </li>
+<li>Binds the assigned time slots of the fixed plan to the given time window</li>
+<li>Fixing costs depend on difference between initial plan (<span class="arithmatex">\(X\)</span>) and fixed plan (<span class="arithmatex">\(Y\)</span>); various cost models imaginable.</li>
+</ol>
+<p><strong>Example costs: fixed fee</strong> <br>
+If, for example, the first mentioned fixing costs were used, i.e. fixed fee for replanning, further existential variables <span class="arithmatex">\(Z \in \left\{0,1\right\}^{\left|A\right| \times \left|W\right|}\)</span> are installed in the third stage and the following constraints would be added:</p>
+<!-- <img src="../images/Fixed_fee.png" alt="Fixed_fee" style="max-width: 50%;"> -->
+
+<div class="arithmatex">\[\begin{align}
+Z \in \left\{0,1\right\}^{\left|A\right| \times \left|W\right|} \\[8pt]
+ z_{i,j} \geq y_{i,j} - x_{i,j} \quad &amp;\forall i \in A, j \in W \\[8pt]
+ c_i^{fix} = \sum_{j \in W} fz_{i,j} \quad &amp;\forall i \in A
+\end{align}\]</div>
+<p>In this case variable <span class="arithmatex">\(z_{i,j}\)</span> must identify if airplane <span class="arithmatex">\(i\)</span> was not scheduled in time slot <span class="arithmatex">\(j\)</span> in the initial plan but in the fixed plan resulting in costs <span class="arithmatex">\(f\)</span> for this plane.</p>
+<p><strong>Restricting the universal variables:</strong> <br>
+By choosing the domains of the universal variables <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(L\)</span> carefully the user already can limit the influence of the universal variables. Nevertheless, some scenarios should not be considered: For example one might want to allow the time windows for some airplane to consist of only one time slot. However, this should not be the case for all airplanes, since this would constitute a rather implausible event. One conceivable demand for the time windows could be that on average the time windows have a length of 2 (i.e. consist of two time slots). Thus, the universal variables L should not only be forced to lie within some bounds, but also within a specific polytope. The polytope for this example would require the following additional constraint:</p>
+<!-- ![Polytope](images/Polytope.png) -->
+
+<div class="arithmatex">\[
+\frac{1}{\left|A\right|}\sum_{i \in A}l_i \geq 2
+\]</div>
+<p>However, simply adding this constraint to the constraint system would not have the desired effect. In fact, it would increase the influence of the universal variables since this constraint could easily be violated and thus the entire instance would become infeasible. However, adding this as a universal constraint would do the trick. or the enforcement of rules regarding the universal variables could be performed implicitly: In a final existential block the fulfillment of such a constraint is checked and if a violation is detected the remaining constraint system is relaxed and the objective value is reduced dramatically. This has the effect that a violation provoked by the allocation of universal variables results in a very good objective value (regarding the existential objective of minimization) and is thus unfavorable with respect to the universal maximization objective.</p>
+<p><strong>Instances:</strong> <br>
+For this runway scheduling problem we created several instances with several variations:</p>
+<ul>
+<li>Instances with more than 3 stages: After the initial plan the time windows for some airplanes are selected by the universal variables. For these airplanes a fixed plan must be prepared. After that the time windows for the remaining airplanes are specified by the universal variables and once again the plan must be fixed. </li>
+<li>Instances with restricted universal variables: As explained above, the universal variables determining the interval lengths must obey some rules.</li>
+<li>Instances with different objective function: the first (fixed fee) and third (distance from initial and final time slot) presented fixing costs are considered.</li>
+<li>Instances with diverse time windows: The interval length can vary from 0 up to 4 time slots and the interval itself can start at up to 4 time slots.</li>
+<li>Instances with different numbers of airplanes and time slots: the number of airplanes varies between 5 and up to more than 100. The number of time slots varies between 7 and up to 200 time slots.</li>
+</ul>
+<p><a href="../downloads/instances/runway_schedul/Instances_runway_scheduling.zip" download>Download Instances</a></p>
+<p>For each of these 29 instances our solver Yasol (utilizing the Cplex LP solver) had one hour to solve the instance. The results where compared to Cplex trying to solve the corresponding deterministic equivalent program, also within one hour. The results are displayed in the following table. Yasol solves 25 out of the 29 instances while CPLEX only can solve 6 of the converted DEPs. Even when only considering the instances solved by CPLEX, Yasol only needs 2.66 seconds on average compared to 6.83 seconds. If instances get large (easy indicator is the number right after the 'A' in the instance name) Yasol is able to detect infeasible instances rather fast but does not manage to grasp optimal feasible solutions. CPLEX, on the other hand, often exceeds the available memory on such instances and does not cope very well if many universal variables are present. But even on instances with few universal variables CPLEX quickly reaches its limit.</p>
+<p><img alt="Upload_Table" src="../images/Upload_Table.png" /></p>
+<p><sup>1</sup> Hartisch M., Ederer T., Lorenz U., Wolf J. (2016) <a href="https://link.springer.com/chapter/10.1007/978-3-319-50935-8_15" target="_blank">Quantified Integer Programs with Polyhedral Uncertainty Set.</a> In: Plaat A., Kosters W., van den Herik J. (eds) Computers and Games. CG 2016. Lecture Notes in Computer Science, vol 10068. Springer, Cham</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Instances/" class="btn btn-neutral float-left" title="Instances"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Publications/" class="btn btn-neutral float-right" title="Publications">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Instances/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Publications/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

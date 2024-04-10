@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Download - Yasol</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Download";
+        var mkdocs_page_input_path = "Download.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Yasol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Download</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#solver-for-quantified-mixed-integer-programs">Solver for Quantified Mixed Integer Programs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#qmip-instances-in-the-qlp-file-format">QMIP Instances in the QLP File Format</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-on-windows">Getting started on Windows</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-on-mac-os-and-linux">Getting started on Mac OS and Linux</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#known-bugs">Known Bugs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#license">License</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../About_Yasol/">About Yasol</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Instances/">Instances</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../QMips/">Q-MIPs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Publications/">Publications</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Credits/">Credits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Team/">Team</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Yasol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Download</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="download">Download</h1>
+<!-- ![HomePic](images/HomePic.png) -->
+
+<h3 id="solver-for-quantified-mixed-integer-programs">Solver for Quantified Mixed Integer Programs</h3>
+<p>Since Yasol has no own built-in LP solver you either need to install IBM® ILOG® CPLEX® Optimization Studio or the COIN-OR Optimization Suite in order to use our solver. Our solver makes intensive use of their linear program solver. These tools are black-box used, but it is our intention not to use the integer solving abilities of these foreign solvers.</p>
+<p>You can download the source code and build the project using the provided batch files for the following operating systems:</p>
+<ul>
+<li><a href="#getting-started-on-mac-os-and-linux">Mac OS</a></li>
+<li><a href="#getting-started-on-mac-os-and-linux">Linux</a></li>
+<li><a href="#getting-started-on-windows">Windows</a></li>
+</ul>
+<hr />
+<h3 id="qmip-instances-in-the-qlp-file-format">QMIP Instances in the QLP File Format</h3>
+<p>In order to solve Q-MIPs with Yasol, the instances have to be available in QLP file format. We provide a number of <a href="../Instances/">test instances</a>.</p>
+<hr />
+<h3 id="getting-started-on-windows">Getting started on Windows</h3>
+<p>Since Yasol has no own built-in LP solver you either need to install IBM® ILOG® CPLEX® Optimization Studio or the COIN-OR Optimization Suite in order to use our solver. For download- and license information of these extern tools, we refer to the corresponding webpages of <a href=https://community.ibm.com/community/user/legacy?lang=en target="_blank">CPLEX®</a> and <a href=https://www.coin-or.org/ target="_blank">Coin-OR</a>.</p>
+<p>In order to execute our batch file that builds the project your systems must be able to run makefiles. One possible way of doing so is to use the <a href=https://learn.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-170&redirectedfrom=MSDN target="_blank">Developer Command Prompt</a>, which is accessible if you are using Microsoft Visual Studio.  </p>
+<p>In order to use Yasol on Windows you need to perform the following steps:</p>
+<ol>
+<li>Download the current Yasol version (3.9.9.3.1 from 2020; the latest version from 2023 is currently only available for Mac and linux) and unpack it (<a href="../downloads/yasol/windows/current_version/Yasol_3.9.9.3.1_Windows.zip" download>Download</a>).</li>
+<li>Open the x64 Developer Command Prompt.</li>
+<li>change your directory to the Yasol main folder.</li>
+<li>Provide the location of your compiler by setting the variable CC. We recommend clang++. This might look like<ul>
+<li>set CC="C:/Program Files/LLVM/bin/clang++"</li>
+</ul>
+</li>
+<li>Provide your folder containing COIN OR (CPLEX) by setting the variable YASOL_CLP_PATH (YASOL_CPLEX_PATH). This might look like<ul>
+<li>set YASOL_CPLEX_PATH="C:/Program Files/IBM/ILOG/CPLEX_Studio1261/cplex"</li>
+<li>set YASOL_CLP_PATH="C:/Program Files/Cbc-2.9.0"</li>
+</ul>
+</li>
+<li>Execute the batch file build_clp (build_cplex) which you should find in the main folder. This will build the executable Yasol_CLP (Yasol_CPLEX) in the subdirectory /bin. If you want to build both you can run 'build_all'.</li>
+<li>In ordern to solve a .qlp instance execute YASOL_CLP (YASOL_CPLEX) with the qlp file you want to solve as input parameters, for example: <ul>
+<li>Yasol_CLP ../../../Data/p2756.qlp</li>
+</ul>
+</li>
+</ol>
+<p><strong>Executable:</strong> <br>
+For Windows users we also provide an <a href="../downloads/yasol/windows/current_version/Yasol_3.9.9.3.1_Windows_executable.zip" download>executable version</a> which uses Coin Or.</p>
+<p><strong>Older Versions (Yasol_O-1.3.3(2017)):</strong> <br>
+Windows Sources: <a href="../downloads/yasol/windows/older_version/Yasol_O-1.3.3_Windows.tar.gz" download>Download</a> <br>
+Windows Executable: <a href="../downloads/yasol/windows/older_version/Yasol_CLP_executable.rar" download>Download</a></p>
+<hr />
+<h3 id="getting-started-on-mac-os-and-linux">Getting started on Mac OS and Linux</h3>
+<p>Since Yasol has no own built-in LP solver you either need to install IBM® ILOG® CPLEX® Optimization Studio or the COIN-OR Optimization Suite in order to use our solver. For download- and license information of these extern tools, we refer to the corresponding webpages of <a href=https://community.ibm.com/community/user/legacy?lang=en target="_blank">CPLEX®</a> and <a href=https://www.coin-or.org/ target="_blank">Coin-OR</a>.</p>
+<p>In order to use Yasol on Mac or Linux you need to perform the following steps:</p>
+<ol>
+<li>Download the latest Yasol version (4.0.1.5 from 2023) and unpack it (Mac: <a href="../downloads/yasol/mac/current_version/Yasol_4.0.1.5_b_mac.zip" download>Download</a>, Linux: <a href="../downloads/yasol/linux/current_version/Yasol_4.0.1.5_b_linux.zip" download>Download</a>)</li>
+<li>Read the README and edit the respective entries in "build_Yasol.bat" to specify your system settings and in particular the location of your COIN OR or CPLEX distribution by setting the variables YASOL_CLP_PATH or YASOL_CPLEX_PATH, respectively. This might look like:<ul>
+<li>export YASOL_CLP_PATH=/opt/tools/coinor_tool</li>
+<li>export YASOL_CPLEX_PATH=/opt/ibm/ILOG/CPLEX_Studio1261/cplex</li>
+</ul>
+</li>
+<li>Make sure that this path contains the folders 'include' and 'lib'.</li>
+<li>Execute build_Yasol.bat. This will build the executable "Yasol" in the subdirectory Yasol/Debug.</li>
+<li>In order to execute Yasol using CLP from COIN OR as lp solver you might have to add the library location to your library search path variable:<ul>
+<li>Mac: export DYLD_LIBRARY_PATH=$YASOL_CLP_PATH/lib:$DYLD_LIBRARY_PATH</li>
+<li>Linux: export LD_LIBRARY_PATH=$YASOL_CLP_PATH/lib:$LD_LIBRARY_PATH</li>
+</ul>
+</li>
+<li>In ordern to solve a .qlp instance execute Yasol with the qlp file you want to solve as input parameters, for example: <ul>
+<li>./Yasol FirstInstances/Runway.qlp</li>
+</ul>
+</li>
+</ol>
+<p><strong>Futher remarks:</strong></p>
+<ul>
+<li>Be sure that the file is in the .qlp format. For closer details on the file format examine the <a href="../About_Yasol/#the-qlp-file-format">QLP file format</a>.</li>
+<li>Always feel free to reach out to us. Setting up new software can be a tedious task and we are happy to help. You find our direct contact on our <a href="../Credits/#developers">developers page</a></li>
+</ul>
+<p><strong>Older versions:</strong></p>
+<ul>
+<li>Yasol_3.9.9.3.1(2020):<ul>
+<li>Mac: <a href="../downloads/yasol/mac/older_version/Yasol_3.9.9.3.1_Mac.zip" download>Download</a></li>
+<li>Linux: <a href="../downloads/yasol/linux/older_version/Yasol_3.9.9.3.1_Linux.zip" download>Download</a></li>
+</ul>
+</li>
+<li>Yasol_O-1.3.3(2017):<ul>
+<li>Mac: <a href="../downloads/yasol/mac/older_version/Yasol_O-1.3.3_Mac.tar.gz" download>Download</a></li>
+<li>Linux: <a href="../downloads/yasol/linux/older_version/Yasol_O-1.3.3_Linux.tar.gz" download>Download</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="known-bugs">Known Bugs</h3>
+<ul>
+<li>Displays result 'infeasible' even solution was found: Even though a solution is found during the search the final result is '-2.30584e+18', indicating an infeasible instance. However, the optimal solution value can be retrieved from the log. Happens more frequently on very small instances.</li>
+<li>When using CoinOR Tools as LP Solver, in case of a non simply restricted instance two additional IP (CBC) solvers are created. We have observed issues with these solvers that found IPs to be infeasible, even though they are not. This resulted in a thrown assertion or a wrong result. Happens more frequently on very small instances.</li>
+</ul>
+<hr />
+<h3 id="license">License</h3>
+<p>Licence statement
+The source code of Yasol that you find here on the download page is licensed under MIT license and the copyrights of the files are file dependent. Please note that library or object-files may be supplied under other license agreements. </p>
+<p>The MIT Licence states as follows:</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../About_Yasol/" class="btn btn-neutral float-right" title="About Yasol">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../About_Yasol/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

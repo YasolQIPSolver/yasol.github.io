@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Publications - Yasol</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Publications";
+        var mkdocs_page_input_path = "Publications.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Yasol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Download/">Download</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../About_Yasol/">About Yasol</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Instances/">Instances</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../QMips/">Q-MIPs</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Publications</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#a-general-model-and-run-solver-for-multistage-robust-discrete-linear-optimization">A general model-and-run solver for multistage robust discrete linear optimization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantified-integer-programming-with-polyhedral-and-decision-dependent">Quantified integer programming with polyhedral and decision-dependent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#multistage-robust-discrete-optimization-via-quantified-integer-programming">Multistage robust discrete optimization via quantified integer programming</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adaptive-relaxations-for-multistage-robust-optimization">Adaptive Relaxations for Multistage Robust Optimization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-novel-application-for-game-tree-search-exploiting-pruning-mechanisms-for-quantified-integer-programs">A novel application for game tree search-exploiting pruning mechanisms for quantified integer programs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#robust-multistage-optimization-with-decision-dependent-uncertainty">Robust multistage optimization with decision-dependent uncertainty</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#yasol-an-open-source-solver-for-quantified-mixed-integer-programs">Yasol: an open source solver for quantified mixed integer programs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantified-integer-programs-with-polyhedral-uncertainty-set">Quantified Integer Programs with Polyhedral Uncertainty Set</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantified-linear-programs-a-computational-study">Quantified linear programs: a computational study</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modeling-games-with-the-help-of-quantified-integer-linear-programs">Modeling games with the help of quantified integer linear programs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantified-combinatorial-optimization">Quantified combinatorial optimization</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Credits/">Credits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Team/">Team</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Yasol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Publications</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="publications">Publications</h1>
+<hr />
+<h3 id="a-general-model-and-run-solver-for-multistage-robust-discrete-linear-optimization">A general model-and-run solver for multistage robust discrete linear optimization</h3>
+<p>The paper is available <a href="https://arxiv.org/abs/2210.11132" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@article{hartisch2022general,
+  title={A general model-and-run solver for multistage robust discrete linear optimization},
+  author={Hartisch, Michael and Lorenz, Ulf},
+  journal={arXiv preprint arXiv:2210.11132},
+  year={2022}
+}
+</code></pre>
+<hr />
+<h3 id="quantified-integer-programming-with-polyhedral-and-decision-dependent">Quantified integer programming with polyhedral and decision-dependent</h3>
+<p>The paper is available <a href="https://dspace.ub.uni-siegen.de/handle/ubsi/1705" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@phdthesis{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  school={University of Siegen, Germany},
+  year={2020}
+}
+</code></pre>
+<hr />
+<h3 id="multistage-robust-discrete-optimization-via-quantified-integer-programming">Multistage robust discrete optimization via quantified integer programming</h3>
+<p>The paper is available <a href="https://www.sciencedirect.com/science/article/pii/S0305054821001908" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@article{goerigk2021multistage,
+  title={Multistage robust discrete optimization via quantified integer programming},
+  author={Goerigk, Marc and Hartisch, Michael},
+  journal={Computers \&amp; Operations Research},
+  volume={135},
+  pages={105434},
+  year={2021},
+  publisher={Elsevier}
+}
+</code></pre>
+<hr />
+<h3 id="adaptive-relaxations-for-multistage-robust-optimization">Adaptive Relaxations for Multistage Robust Optimization</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-030-89188-6_36" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{hartisch2021adaptive,
+  title={Adaptive Relaxations for Multistage Robust Optimization},
+  author={Hartisch, Michael},
+  booktitle={Pacific Rim International Conference on Artificial Intelligence},
+  pages={485--499},
+  year={2021},
+  organization={Springer}
+}
+</code></pre>
+<hr />
+<h3 id="a-novel-application-for-game-tree-search-exploiting-pruning-mechanisms-for-quantified-integer-programs">A novel application for game tree search-exploiting pruning mechanisms for quantified integer programs</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-030-65883-0_6" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@article{hartisch2020quantified,
+  title={Quantified integer programming with polyhedral and decision-dependent uncertainty},
+  author={Hartisch, Michael},
+  year={2020}
+}
+</code></pre>
+<hr />
+<h3 id="robust-multistage-optimization-with-decision-dependent-uncertainty">Robust multistage optimization with decision-dependent uncertainty</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-030-48439-2_53" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{hartisch2020robust,
+  title={Robust multistage optimization with decision-dependent uncertainty},
+  author={Hartisch, Michael and Lorenz, Ulf},
+  booktitle={Operations Research Proceedings 2019: Selected Papers of the Annual International Conference of the German Operations Research Society (GOR), Dresden, Germany, September 4-6, 2019},
+  pages={439--445},
+  year={2020},
+  organization={Springer}
+}
+</code></pre>
+<hr />
+<h3 id="yasol-an-open-source-solver-for-quantified-mixed-integer-programs">Yasol: an open source solver for quantified mixed integer programs</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-319-71649-7_19" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{ederer2017yasol,
+  title={Yasol: an open source solver for quantified mixed integer programs},
+  author={Ederer, Thorsten and Hartisch, Michael and Lorenz, Ulf and Opfer, Thomas and Wolf, Jan},
+  booktitle={Advances in Computer Games: 15th International Conferences, ACG 2017, Leiden, The Netherlands, July 3--5, 2017, Revised Selected Papers 15},
+  pages={224--233},
+  year={2017},
+  organization={Springer}
+}
+</code></pre>
+<hr />
+<h3 id="quantified-integer-programs-with-polyhedral-uncertainty-set">Quantified Integer Programs with Polyhedral Uncertainty Set</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-319-50935-8_15" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{hartisch2016quantified,
+  title={Quantified integer programs with polyhedral uncertainty set},
+  author={Hartisch, Michael and Ederer, Thorsten and Lorenz, Ulf and Wolf, Jan},
+  booktitle={Computers and Games: 9th International Conference, CG 2016, Leiden, The Netherlands, June 29--July 1, 2016, Revised Selected Papers 9},
+  pages={156--166},
+  year={2016},
+  organization={Springer}
+}
+</code></pre>
+<hr />
+<h3 id="quantified-linear-programs-a-computational-study">Quantified linear programs: a computational study</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-642-23719-5_18" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{ederer2011quantified,
+  title={Quantified linear programs: a computational study},
+  author={Ederer, Thorsten and Lorenz, Ulf and Martin, Alexander and Wolf, Jan},
+  booktitle={European Symposium on Algorithms},
+  pages={203--214},
+  year={2011},
+  organization={Springer}
+}
+</code></pre>
+<hr />
+<h3 id="modeling-games-with-the-help-of-quantified-integer-linear-programs">Modeling games with the help of quantified integer linear programs</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-642-31866-5_23" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{ederer2012modeling,
+  title={Modeling games with the help of quantified integer linear programs},
+  author={Ederer, Thorsten and Lorenz, Ulf and Opfer, Thomas and Wolf, Jan},
+  booktitle={Advances in Computer Games: 13th International Conference, ACG 2011, Tilburg, The Netherlands, November 20-22, 2011, Revised Selected Papers 13},
+  pages={270--281},
+  year={2012},
+  organization={Springer}
+}
+</code></pre>
+<hr />
+<h3 id="quantified-combinatorial-optimization">Quantified combinatorial optimization</h3>
+<p>The paper is available <a href="https://link.springer.com/chapter/10.1007/978-3-319-07001-8_17" target="_blank">here</a>.</p>
+<pre><code class="language-bibtex">@inproceedings{ederer2014quantified,
+  title={Quantified combinatorial optimization},
+  author={Ederer, Thorsten and Lorenz, Ulf and Opfer, Thomas},
+  booktitle={Operations Research Proceedings 2013: Selected Papers of the International Conference on Operations Research, OR2013, organized by the German Operations Research Society (GOR), the Dutch Society of Operations Research (NGB) and Erasmus University Rotterdam, September 3-6, 2013},
+  pages={121--128},
+  year={2014},
+  organization={Springer}
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../QMips/" class="btn btn-neutral float-left" title="Q-MIPs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Credits/" class="btn btn-neutral float-right" title="Credits">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../QMips/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Credits/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

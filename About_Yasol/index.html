@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>About Yasol - Yasol</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "About Yasol";
+        var mkdocs_page_input_path = "About_Yasol.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Yasol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Download/">Download</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">About Yasol</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-qlp-file-format">The QLP File Format</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Instances/">Instances</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../QMips/">Q-MIPs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Publications/">Publications</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Credits/">Credits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Team/">Team</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Yasol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">About Yasol</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="about-yasol">About Yasol</h1>
+<p>Yasol is a search based solver for so called 'Quantified integer linear programs with minimax objective‘ (QIP). As we additionally allow continuous decision variables in the final stage, the solver is able to deal with very specific Quantified mixed-integer linear programs (Q-MIP). The aim is to support optimization under uncertainty in a new way, based upon rigorous formal models of quantification and linear constraints.</p>
+<p>Our mission is research. The reason why we open the sources of this solver is in order to intensify the discussion whether multi-stage optimization is possible and maybe even practical. </p>
+<p>While the solver is new in the sense that there are no other QIP solver at this time (October 2022), most basic ingredients of Yasol are not new at all. The heart of the search algorithm is an arithmetic linear constraint database together with the Alphabeta algorithm which has been successfully used in gaming programs like in chess programs since many years. In order to realize fast back jumps as typically performed in SAT- and QBF- solvers, we have extended the Alphabeta algorithm as roughly described in <sup>1</sup>. Yasol deals with constraint learning on the so called primal side as known from SAT- and QBF-solving, as well as with constraint learning on the so called dual side, as is known from Mathematical Programming. Yasol solves multistage quantified programs with the following properties:</p>
+<ul>
+<li>all constraints are linear</li>
+<li>quantifiers are either existential or universal</li>
+<li>the objective is minmax (more exactly: min max min … max min max) and is linear for any single game</li>
+<li>integer variables are allowed on all exist-stages and must be greater or equal to zero</li>
+<li>only integer variables are allowed on universal stages</li>
+<li>continuous variables are allowed only on the last stage, assuming it is an existential stage</li>
+<li>all variables must be bounded from below and above, and the range between upper and lower bounds of integer variables must not exceed 40 bits</li>
+</ul>
+<p>In a recent computational study we showed that solving robust discrete problems with multiple stages is well within the reach of our solver <sup>2</sup>. It makes intensive use of a linear program solver like clp or the lp-solver of cplex.</p>
+<p>For some historical notes on Quantified Programming, Linear Programming and personal credits, we refer to our <a href="../Credits/#history-q-mip-and-others">history page</a>. </p>
+<p>For details of how to use the solver and about details of input formats etc. we refer to our <a href="../Download/">download</a> and <a href="../Instances/">instances page</a>.</p>
+<p><sup>1</sup> Thorsten Ederer, Michael Hartisch, Ulf Lorenz, Thomas Opfer, Jan Wolf. <a href=https://link.springer.com/content/pdf/10.1007/978-3-319-71649-7_19.pdf target="_blank">Yasol: An Open Source Solver for Quantified Mixed Integer Programs.</a> ACG 2017: 224-233 <br>
+<sup>2</sup> Marc Goerigk, Michael Hartisch. <a href=https://www.sciencedirect.com/science/article/pii/S0305054821001908?via%3Dihub target="_blank">Multistage Robust Discrete Optimization via Quantified Integer Programming.</a> Computers &amp; Operations Research, 135:105434, 2021 <br>
+<sup>3</sup> Michael Hartisch, Ulf Lorenz. <a href=https://arxiv.org/abs/2210.11132 target="_blank">A general model-and-run solver for multistage robust discrete linear optimization.</a> Submitted to INFORMS Journal on Computing, 2023 </p>
+<hr />
+<h3 id="getting-started">Getting started</h3>
+<p><strong>Setting Up:</strong> <br>
+After you have downloaded and compiled the current Yasol version for your operating system you are ready to go. A few things have to be kept in mind when starting Yasol:</p>
+<ul>
+<li>Ensure that the Yasol.ini file is present in the directory you want to call the solver from. This file is needed to load the solver setting. If it is not found the solver starts with very basic setting resulting in very long runtime.</li>
+<li>Ensure that a Folder logs is present in the directory you want to call the solver from. When running Yasol a file containing additional output information is maintained in this folder and error messages occur if this folder cannot be found.</li>
+</ul>
+<p>Note that these requirements are fulfilled when starting Yasol from "Your_Yasol_Directory/bin", where the executable is located after compiling.</p>
+<p><strong>Calling the Solver:</strong> <br>
+In order to solve an instance first be sure it adheres to the <a href="./#the-qlp-file-format">QLP file format</a>. The solver is invoked using the following call:</p>
+<p><code>./Yasol_CPLEX &lt;Instance&gt; [&lt;InformationLevel&gt;] [&lt;TimeLimit&gt;]</code></p>
+<p>The parameters in brackets are optional. With an increasing information level more output is generated mainly used for debugging purposes. If a time limit is specified the solution process is canceled after the given number seconds. Additionally, we overloaded the information level parameter:</p>
+<ul>
+<li>Information level "-60": The DEP of the binarized instance is built and solved via the linked MIP solver.</li>
+<li>Information level "-61": The DEP of the instance is built and solved via the linked MIP solver.</li>
+<li>Information level "Reduce": For instances with universal constraint system this call will return a standard QIP without universal constraints.
+Note that these option are not excessively tested yet.</li>
+</ul>
+<p><strong>Interpreting a Solution:</strong> <br>
+The main output the solver provides is the optimal objective value and the first stage solution. The principal variation, i.e. the variable assignment representing optimal play and thus the optimal objective value, can be retrieved from the logs/solutions.log file. Note that in this case "maintainPv" has to be set to one in the Yasol.ini file. Further, one can explicitly request a solution file solely for this instance. This can be done be setting "writeOutputFile=1" in the Yasol.ini file. Then, an XML formatted solution file will be created after the optimal solution was found. The name of the solution file will be the original instance file name with an attached .sol.</p>
+<hr />
+<h3 id="the-qlp-file-format">The QLP File Format</h3>
+<p>As an input for our optimization software, a new standardized file format is required. We extended the CPLEX-LP file format to handle quantifiers and to specify an order of the variables in the so called QLP file format. The following keywords are used, where new keywords are marked with <em>.:
+MAXIMIZE / MINIMIZE, SUBJECT TO, BOUNDS, GENERALS, BINARIES, UNCERTAINTY SUBJECT TO</em>, ALL<em>, EXISTS</em>, ORDER*, END</p>
+<ol>
+<li>Every keyword has to be written in capital letters. Abbreviations are not allowed.</li>
+<li>The BOUNDS section which follows the constraint section is mandatory. Each bound definition has to begin on a new line. The general form is l≤x≤u.</li>
+<li>The BOUNDS section is followed by typifying the variables. To specify any of the variables as general integer variables, a GENERAL section has to be added; to specify any of the variables as binary integer variables, a BINARY section has to be added. In every section the variables are separated by at least one space.</li>
+<li>Every variable is marked with one of the new keywords ALL or EXISTS. Analogously the variables in the ALL and EXISTS section are separated by at least one space.</li>
+<li>The order of the variables is specified below the keyword ORDER.</li>
+<li>If the instance contains a universal constraint system specifying the uncertainty set, the keyword UNCERTAINTY SUBJECT TO is used similar to SUBJECT TO for the existential constraint system.</li>
+</ol>
+<p><strong>Exemplarily we will consider the following QIP instance:</strong></p>
+<!--
+∃x<sub>1</sub>∈{0,1}  ∀x<sub>2</sub>∈{0,1}  ∃x<sub>3</sub>∈{0,1,2}: <br>
+min -       x<sub>1</sub>   -   2   x<sub>2</sub>   -   2   x<sub>3</sub> <br>
+s.t.    -   x<sub>2</sub>   -   x<sub>3</sub>   ≤   -1 <br>
+        -   x<sub>1</sub>   +   x<sub>2</sub>   +   x<sub>3</sub>   ≤   1 <br>
+            x<sub>1</sub>   +   2   x<sub>2</sub>   ≤   3
+-->
+
+<div class="arithmatex">\[ \exists x_1 \in \left\{0,1\right\} \quad \forall x_2 \in \left\{0,1\right\} \quad \exists x_3 \in \left\{0,1,2\right\}: \]</div>
+<div class="arithmatex">\[\begin{align}
+\min \quad -&amp;x_1 - 2x_2 -2x_3 \\[5pt]
+\mathrm{s.t.} \quad &amp;x_1 - x_2 - x_3 \leq -1 \\[5pt]
+-&amp;x_1 + x_2 + x_3 \leq 1 \\[5pt]
+&amp;x_1 + 2x_2 \leq 3
+\end{align}\]</div>
+<p><br>
+<strong>A typical QLP file (belonging to the above example) looks as follows <a href=http://tm-server-2.wiwi.uni-siegen.de/t3-q-mip/fileadmin/downloads/instances/qip_example.qlp target="_blank">(example)</a>:</strong></p>
+<p>MINIMIZE <br>
+- x1 - 2 x2 - 2 x3 <br>
+SUBJECT TO <br>
+- x2 - x3 &lt;= -1 <br>
+- x1 + x2 + x3 &lt;= 1 <br>
+2 x1 + 2 x2 &lt;= 3 <br>
+BOUNDS <br>
+0 &lt;= x1 &lt;= 1 <br>
+0 &lt;= x2 &lt;= 1 <br>
+0 &lt;= x3 &lt;= 2 <br>
+BINARIES <br>
+x1 x2 <br>
+GENERALS <br>
+x3 <br>
+EXISTS <br>
+x1 x3 <br>
+ALL <br>
+x2 <br>
+ORDER <br>
+x1 x2 x3 <br>
+END</p>
+<p><strong>Requirements and Restrictions:</strong></p>
+<p>Only linear constraints and objective function.
+integer variables are allowed in all variable blocks
+Continuous variables, i.e. variables not listed below the keywords BINARIES or GENERAL, have to be part of the final (existential) variable block.
+The right-hand side of each constraint may only contain a single parameter, i.e. all variables have to be on the left-hand side.</p>
+<p><strong>Further Rules:</strong></p>
+<ul>
+<li>Make sure that all variables are on the left-hand side of the constraint. Variables on the right-hand side are not permitted.</li>
+<li>Similarly, parameters are ignored if they appear on the left-hand side of the constraint.</li>
+<li>The letter E or e, alone or followed by other valid symbols, in particular digits, should be avoided as this notation is reserved for exponential entries.</li>
+<li>All Variables need to be bounded. You can use '-inf' and '+inf' to indicated vast bounds but note that they are still bounded by some large number. Hence, be careful when interpreting the solution.</li>
+<li>Constraints do not need to have a name. If you decide on naming them note that constraints having a constraint names starting with "U_" are considered universal constraints, even if they appear underneath the SUBJECT TO keyword. This option is conserved in order to be able to deal with older instances that used a different file format.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Download/" class="btn btn-neutral float-left" title="Download"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Instances/" class="btn btn-neutral float-right" title="Instances">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Download/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Instances/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
