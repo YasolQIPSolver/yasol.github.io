@@ -5,7 +5,7 @@
 <a href="https://www.wiwi.uni-siegen.de/ndsm/team/hartisch.html" target="_blank">Michael Hartisch</a>, contributor math programming, main contact for user service
 
 **Other Pages:** <br>
-<a href="www.q-mip.org" target="_blank">
+<a href="http://www.q-mip.org" target="_blank">
     <i class="fa fa-home"></i> Homepage
 </a> <br>
 <a href="https://github.com/MichaelHartisch/Yasol" target="_blank">
